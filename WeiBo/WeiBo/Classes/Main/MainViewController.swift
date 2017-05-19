@@ -12,19 +12,15 @@ import UIKit
 class MainViewController: UITabBarController {
     
     // MARK: - 懒加载图片数组
-    fileprivate lazy var composeBtn : UIButton = UIButton()
+    fileprivate lazy var composeBtn : UIButton = UIButton(image: "tabbar_compose_icon_add", backgImage: "tabbar_compose_button")
 
+    // MARK: - 系统回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupComposeBtn()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(true)
-        
-    }
+
 }
 
 
@@ -34,12 +30,10 @@ extension MainViewController{
     /// 设置发布按钮
     fileprivate func setupComposeBtn() {
         
-        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for: .normal)
-        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
-        composeBtn.setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
-        composeBtn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), for: .highlighted)
-        composeBtn.sizeToFit()
+        // 设置位置
         composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.center.y)
+        
+        // 添加到View上
         self.view.addSubview(composeBtn)
     }
     

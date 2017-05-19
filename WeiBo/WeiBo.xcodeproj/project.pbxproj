@@ -24,6 +24,7 @@
 		B4C978921ECEC4F5001D640E /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C978901ECEC4F5001D640E /* Discover.storyboard */; };
 		B4C978941ECEC507001D640E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C978931ECEC507001D640E /* Profile.storyboard */; };
 		B4C978971ECEC9EB001D640E /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C978951ECEC9EB001D640E /* Null.storyboard */; };
+		B4C9789A1ECEEC12001D640E /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978991ECEEC12001D640E /* UIButton-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		B4C978911ECEC4F5001D640E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		B4C978931ECEC507001D640E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		B4C978961ECEC9EB001D640E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
+		B4C978991ECEEC12001D640E /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B401706D1ECE045400185F20 /* Message */,
 				B401706A1ECE045400185F20 /* Discover */,
 				B401706E1ECE045400185F20 /* Profile */,
+				B4C978981ECEEBD3001D640E /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -209,6 +212,14 @@
 				B4C978891ECE99FB001D640E /* MainVCSettings.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		B4C978981ECEEBD3001D640E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B4C978991ECEEC12001D640E /* UIButton-Extension.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
+				B4C9789A1ECEEC12001D640E /* UIButton-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
