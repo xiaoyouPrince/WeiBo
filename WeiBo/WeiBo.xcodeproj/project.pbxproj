@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
 		B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */; };
+		B44DDDB91ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB81ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift */; };
 		B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664B91ECDF70C00BAD01F /* AppDelegate.swift */; };
 		B45664BF1ECDF70C00BAD01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45664BD1ECDF70C00BAD01F /* Main.storyboard */; };
 		B45664C11ECDF70C00BAD01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45664C01ECDF70C00BAD01F /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		B44DDDB81ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		B45664B61ECDF70C00BAD01F /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45664B91ECDF70C00BAD01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45664BE1ECDF70C00BAD01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				B4C978991ECEEC12001D640E /* UIButton-Extension.swift */,
+				B44DDDB81ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44DDDB91ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift in Sources */,
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
 				B4C9789A1ECEEC12001D640E /* UIButton-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
