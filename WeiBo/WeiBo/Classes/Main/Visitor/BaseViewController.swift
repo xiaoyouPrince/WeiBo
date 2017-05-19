@@ -14,7 +14,7 @@ class BaseViewController: UITableViewController {
     fileprivate lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     /// 属性： 是否登录
-    var isLogin : Bool = true
+    var isLogin : Bool = false
     
     
     // MARK: - 系统调用
@@ -55,9 +55,7 @@ extension BaseViewController {
     
     
     fileprivate func setupVisitorView(){
-        
-        visitorView.backgroundColor = UIColor.yellow
-        
+                
         view = visitorView
         
     }
