@@ -26,39 +26,48 @@ class BaseViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setupNavItems()
     }
-
-    
-    
-    
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-
 }
 
 
-// MARK: - 创建访客视图
+// MARK: - 创建UI
 extension BaseViewController {
     
-    
+    /// 创建访客视图
     fileprivate func setupVisitorView(){
-                
+        
+        // 1.直接当做本身View展示
         view = visitorView
         
+        // 2.添加对应的事件监听
+        visitorView.registerBtn.addTarget(self, action: #selector(BaseViewController.registerBtnClick), for: .touchUpInside)
+        visitorView.loginBtn.addTarget(self, action: #selector(BaseViewController.loginBtnClick), for: .touchUpInside)
+        
+    }
+    
+    /// 设置导航左右barbuttonitem
+    fileprivate func setupNavItems(){
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(BaseViewController.registerBtnClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(BaseViewController.loginBtnClick))
         
     }
     
 }
 
+
+
+// MARK: - 事件监听处理
+extension BaseViewController{
+    
+    @objc fileprivate func registerBtnClick() {
+        print("注册按钮点击----")
+    }
+    
+    
+    @objc fileprivate func loginBtnClick() {
+        print("登录按钮点击----")
+    }
+    
+}
