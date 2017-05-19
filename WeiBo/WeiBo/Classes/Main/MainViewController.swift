@@ -12,36 +12,43 @@ import UIKit
 class MainViewController: UITabBarController {
     
     // MARK: - 懒加载图片数组
-    fileprivate lazy var images = ["tabbar_home_highlighted","tabbar_message_center_highlighted","","tabbar_discover_highlighted","tabbar_profile_highlighted"]
-    
+    fileprivate lazy var composeBtn : UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-   
+        setupComposeBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
         
-        // 部署对应的tabbarItem
-        for i in 0..<tabBar.items!.count{
-            
-            let item = tabBar.items?[i]
-            
-            if i == 2 {
-                item?.isEnabled = false
-                continue
-            }
-            
-            item?.selectedImage = UIImage(named: images[i])
-        }
     }
-
-
 }
+
+
+// MARK: - 创建UI
+extension MainViewController{
+    
+    /// 设置发布按钮
+    fileprivate func setupComposeBtn() {
+        
+        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for: .normal)
+        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
+        composeBtn.setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
+        composeBtn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), for: .highlighted)
+        composeBtn.sizeToFit()
+        composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.center.y)
+        self.view.addSubview(composeBtn)
+    }
+    
+}
+
+
+
+
+
 
 // MARK: - 使用代码创建项目 - 本项目实际使用SB，所以这段代码只做保留，用于参考
 extension MainViewController{
