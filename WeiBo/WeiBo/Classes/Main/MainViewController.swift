@@ -35,7 +35,22 @@ extension MainViewController{
         
         // 添加到View上
         self.view.addSubview(composeBtn)
+        
+        // 添加事件监听
+        composeBtn.addTarget(self, action: #selector(composeBtnClick), for: .touchUpInside)
     }
+    
+}
+
+
+extension MainViewController{
+    
+    
+    // @objc 是OC标识，因为消息机制是OC特性，这里使用消息机制了，主要有fileprivate进行了保护，所以SEL列表中没有对应方法
+    @objc fileprivate func composeBtnClick() {
+        print("-    --------------")
+    }
+    
     
 }
 
