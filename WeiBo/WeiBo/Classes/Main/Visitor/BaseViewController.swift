@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UITableViewController {
     
     // MARK: - 懒加载visitorView
-    fileprivate lazy var visitorView : VisitorView = VisitorView.visitorView()
+    var visitorView : VisitorView = VisitorView.visitorView()
     
     /// 属性： 是否登录
     var isLogin : Bool = false
@@ -21,7 +21,6 @@ class BaseViewController: UITableViewController {
     override func loadView() {
         
         isLogin ? super.loadView() : setupVisitorView()
-        
     }
 
     override func viewDidLoad() {
@@ -57,6 +56,7 @@ extension BaseViewController {
     fileprivate func setupVisitorView(){
                 
         view = visitorView
+        
         
     }
     

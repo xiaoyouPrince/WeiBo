@@ -27,7 +27,7 @@
                         <constraint firstAttribute="height" constant="430" id="WyV-Lp-WAd"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-DQ-qqk" userLabel="图标">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-DQ-qqk" userLabel="图标">
                     <rect key="frame" x="140" y="223.5" width="94" height="90"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="Boz-Dv-BOd"/>
@@ -78,6 +78,13 @@
                 <constraint firstItem="ruj-sn-val" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="v3A-ej-Pbt"/>
                 <constraint firstItem="tAw-xJ-99X" firstAttribute="trailing" secondItem="0WV-wB-XhJ" secondAttribute="trailing" id="wE5-jx-iWV"/>
             </constraints>
+            <connections>
+                <outlet property="iconView" destination="7dO-DQ-qqk" id="vNa-hN-xSR"/>
+                <outlet property="loginBtn" destination="tAw-xJ-99X" id="79N-u0-u2n"/>
+                <outlet property="registerBtn" destination="pKX-dI-hCW" id="uvf-Kc-fBp"/>
+                <outlet property="rotationView" destination="4pf-E9-hPM" id="ThK-e3-yKg"/>
+                <outlet property="tipsLabel" destination="0WV-wB-XhJ" id="HOM-Vq-K6N"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
