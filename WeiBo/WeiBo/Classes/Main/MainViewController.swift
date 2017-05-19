@@ -14,11 +14,41 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 获取资源地址
+        guard let jsonPath = Bundle.main.path(forResource: "MainVCSettings.json", ofType: nil) else {
+            return
+        }
         
-        addChildViewController(childVcName: "HomeViewController", title: "首页", image: "tabbar_home")
-        addChildViewController(childVcName: "MessageViewController", title: "消息", image: "tabbar_message_center")
-        addChildViewController(childVcName: "DiscoverViewController", title: "发现", image: "tabbar_discover")
-        addChildViewController(childVcName: "ProfileViewController", title: "我", image: "tabbar_profile")
+        // 读取内容
+        guard let data = NSData(contentsOfFile: jsonPath) else {
+            return
+        }
+        
+        // json 序列化 -- 由于 Swift 3.0 之后 Data 类型变成了结构体，所以在这块需要和OC相互转化一下
+        guard let anyObj = try? JSONSerialization.jsonObject(with: data as Data, options: .mutableContainers) else {
+            return
+        }
+        
+        // 转化成对应的字典数组
+        guard let dictArray = anyObj as? [[String : Any]] else {
+            return
+        }
+        
+        // 遍历数组中字典，并且赋值
+        for dict in dictArray{
+            
+            let name = dict["vcName"] as! String
+            let title = dict["title"] as! String
+            let imageName = dict["imageName"] as! String
+            
+            addChildViewController(childVcName: name , title: title, image: imageName)
+        }
+
+//        1. 手动添加自控制器
+//        addChildViewController(childVcName: "HomeViewController", title: "首页", image: "tabbar_home")
+//        addChildViewController(childVcName: "MessageViewController", title: "消息", image: "tabbar_message_center")
+//        addChildViewController(childVcName: "DiscoverViewController", title: "发现", image: "tabbar_discover")
+//        addChildViewController(childVcName: "ProfileViewController", title: "我", image: "tabbar_profile")
 
     }
     
