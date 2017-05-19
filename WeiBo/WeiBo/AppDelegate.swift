@@ -19,13 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: - 设置全局tabbaritem的展示颜色
         UITabBar.appearance().tintColor = UIColor.orange
+        
+        
 
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let mainVC = MainViewController()
-        window?.rootViewController = mainVC
-        window?.makeKeyAndVisible()
-        
         return true
     }
 
