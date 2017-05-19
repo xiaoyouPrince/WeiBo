@@ -10,21 +10,38 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    // MARK: - 懒加载图片数组
+    fileprivate lazy var images = ["tabbar_home_highlighted","tabbar_message_center_highlighted","","tabbar_discover_highlighted","tabbar_profile_highlighted"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+   
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        super.viewWillAppear(true)
         
+        // 部署对应的tabbarItem
+        for i in 0..<tabBar.items!.count{
+            
+            let item = tabBar.items?[i]
+            
+            if i == 2 {
+                item?.isEnabled = false
+                continue
+            }
+            
+            item?.selectedImage = UIImage(named: images[i])
+        }
     }
 
+
 }
-
-
-
-
-
 
 // MARK: - 使用代码创建项目 - 本项目实际使用SB，所以这段代码只做保留，用于参考
 extension MainViewController{
