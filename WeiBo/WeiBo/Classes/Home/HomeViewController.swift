@@ -70,11 +70,25 @@ extension HomeViewController{
         // 3. 重要--设置Model样式为保留之前VC们
         pop.modalPresentationStyle = .custom
         
+        // 4. 设置转场动画，改变对应的 popvc 的frame
+        pop.transitioningDelegate = self 
+ 
         self.present(pop, animated: true, completion: nil)
     }
     
 }
 
+
+// MARK: - 专场动画代理
+extension HomeViewController : UIViewControllerTransitioningDelegate{
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        // 这里需要自定义UIPresentationController
+        return XYPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+    
+}
 
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */; };
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
 		B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */; };
 		B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664B91ECDF70C00BAD01F /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYPresentationController.swift; sourceTree = "<group>"; };
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		B45664B61ECDF70C00BAD01F /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,7 @@
 			children = (
 				B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */,
 				B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */,
+				B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
+				B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
 				B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */,
 				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
