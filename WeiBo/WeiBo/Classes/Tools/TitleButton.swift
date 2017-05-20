@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class TitleButton: UIButton {
 
     override init(frame: CGRect) {
@@ -20,7 +22,6 @@ class TitleButton: UIButton {
         setTitleColor(UIColor.black, for: .normal)
         sizeToFit()
         
-        addTarget(self, action: #selector(TitleButton.titleBtnClick(titleBtn:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,14 +37,3 @@ class TitleButton: UIButton {
     }
 }
 
-
-// MARK: - 事件监听
-
-extension TitleButton{
-    
-    @objc fileprivate func titleBtnClick(titleBtn : TitleButton) {
-        
-        self.isSelected = !self.isSelected
-    }
-    
-}

@@ -30,6 +30,8 @@
 		B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA931ECFD3A9004D554B /* UIBarButtonItem-Extension.swift */; };
 		B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA941ECFD3A9004D554B /* UIButton-Extension.swift */; };
 		B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA971ECFD3C3004D554B /* TitleButton.swift */; };
+		B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */; };
+		B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		B4D3EA931ECFD3A9004D554B /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		B4D3EA941ECFD3A9004D554B /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		B4D3EA971ECFD3C3004D554B /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		B401706B1ECE045400185F20 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B4D6F9FC1ECFE5DA00DA609F /* UIPopover */,
 				B4C9788B1ECEC4CF001D640E /* Home.storyboard */,
 				B4C978801ECE8AEB001D640E /* HomeViewController.swift */,
 			);
@@ -253,6 +258,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		B4D6F9FC1ECFE5DA00DA609F /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */,
+				B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */,
+			);
+			path = UIPopover;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +383,7 @@
 				B4C978941ECEC507001D640E /* Profile.storyboard in Resources */,
 				B45664C11ECDF70C00BAD01F /* Assets.xcassets in Resources */,
 				B4C9788A1ECE99FB001D640E /* MainVCSettings.json in Resources */,
+				B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */,
 				B4C978971ECEC9EB001D640E /* Null.storyboard in Resources */,
 				B4C9788F1ECEC4E2001D640E /* Message.storyboard in Resources */,
 				B4C978921ECEC4F5001D640E /* Discover.storyboard in Resources */,
@@ -401,6 +416,7 @@
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
+				B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */,
 				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
 				B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */,

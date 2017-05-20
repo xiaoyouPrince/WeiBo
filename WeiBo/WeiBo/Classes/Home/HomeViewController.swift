@@ -35,6 +35,8 @@ class HomeViewController: BaseViewController {
 }
 
 
+// MARK: - 创建UI
+
 extension HomeViewController{
     
     /// 设置导航栏
@@ -46,6 +48,33 @@ extension HomeViewController{
         
         // 导航栏titleBtn
         titleBtn.setTitle("xiaoyouPrince", for: .normal)
+        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(titleBtn:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
     }
 }
+
+
+// MARK: - 监听事件监听
+
+extension HomeViewController{
+    
+    
+    @objc fileprivate func titleBtnClick(titleBtn : TitleButton) {
+        
+        // 1. 修改对应状态
+        titleBtn.isSelected = !titleBtn.isSelected
+        
+        // 2.弹出popover菜单
+        let pop = PopoverViewController()
+        
+        // 3. 重要--设置Model样式为保留之前VC们
+        pop.modalPresentationStyle = .custom
+        
+        self.present(pop, animated: true, completion: nil)
+    }
+    
+}
+
+
+
+
