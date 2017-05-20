@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
 		B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */; };
-		B44DDDB91ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB81ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift */; };
 		B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664B91ECDF70C00BAD01F /* AppDelegate.swift */; };
 		B45664BF1ECDF70C00BAD01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45664BD1ECDF70C00BAD01F /* Main.storyboard */; };
 		B45664C11ECDF70C00BAD01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45664C01ECDF70C00BAD01F /* Assets.xcassets */; };
@@ -27,8 +26,10 @@
 		B4C978921ECEC4F5001D640E /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C978901ECEC4F5001D640E /* Discover.storyboard */; };
 		B4C978941ECEC507001D640E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C978931ECEC507001D640E /* Profile.storyboard */; };
 		B4C978971ECEC9EB001D640E /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C978951ECEC9EB001D640E /* Null.storyboard */; };
-		B4C9789A1ECEEC12001D640E /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978991ECEEC12001D640E /* UIButton-Extension.swift */; };
 		B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9789C1ECEF5E5001D640E /* BaseViewController.swift */; };
+		B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA931ECFD3A9004D554B /* UIBarButtonItem-Extension.swift */; };
+		B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA941ECFD3A9004D554B /* UIButton-Extension.swift */; };
+		B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA971ECFD3C3004D554B /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,6 @@
 /* Begin PBXFileReference section */
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
-		B44DDDB81ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		B45664B61ECDF70C00BAD01F /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45664B91ECDF70C00BAD01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45664BE1ECDF70C00BAD01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,8 +75,10 @@
 		B4C978911ECEC4F5001D640E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		B4C978931ECEC507001D640E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		B4C978961ECEC9EB001D640E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Null.storyboard; sourceTree = "<group>"; };
-		B4C978991ECEEC12001D640E /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		B4C9789C1ECEF5E5001D640E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B4D3EA931ECFD3A9004D554B /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		B4D3EA941ECFD3A9004D554B /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		B4D3EA971ECFD3C3004D554B /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,8 +228,8 @@
 		B4C978981ECEEBD3001D640E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				B4C978991ECEEC12001D640E /* UIButton-Extension.swift */,
-				B44DDDB81ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift */,
+				B4D3EA921ECFD3A9004D554B /* Category */,
+				B4D3EA971ECFD3C3004D554B /* TitleButton.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -240,6 +242,15 @@
 				B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */,
 			);
 			path = Visitor;
+			sourceTree = "<group>";
+		};
+		B4D3EA921ECFD3A9004D554B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B4D3EA931ECFD3A9004D554B /* UIBarButtonItem-Extension.swift */,
+				B4D3EA941ECFD3A9004D554B /* UIButton-Extension.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,12 +397,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B44DDDB91ECF5C32002AF0AD /* UIBarButtonItem-Extension.swift in Sources */,
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
-				B4C9789A1ECEEC12001D640E /* UIButton-Extension.swift in Sources */,
+				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
+				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
+				B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */,
 				B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,

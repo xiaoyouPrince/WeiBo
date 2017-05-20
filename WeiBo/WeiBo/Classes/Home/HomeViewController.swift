@@ -9,6 +9,13 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
+    
+    
+    
+    // MARK: - 懒加载属性
+    fileprivate lazy var titleBtn : TitleButton = TitleButton()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +37,15 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController{
     
+    /// 设置导航栏
     func setupNavigationBar() {
         
+        // 导航栏左右item
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
-
         
+        // 导航栏titleBtn
+        titleBtn.setTitle("xiaoyouPrince", for: .normal)
+        navigationItem.titleView = titleBtn
     }
 }
