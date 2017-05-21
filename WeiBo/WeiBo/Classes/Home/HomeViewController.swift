@@ -79,14 +79,45 @@ extension HomeViewController{
 }
 
 
-// MARK: - 专场动画代理
+// MARK: - 自定义转场动画代理
 extension HomeViewController : UIViewControllerTransitioningDelegate{
     
+    /// 得到presentController，可可以修改对应的弹出view 的frame
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
         // 这里需要自定义UIPresentationController
         return XYPresentationController(presentedViewController: presented, presenting: presenting)
     }
+    
+    
+    /// 自定义弹出和消失的转场动画
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return self
+    }
+    
+}
+
+
+
+extension HomeViewController : UIViewControllerAnimatedTransitioning{
+    
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval{
+       
+        return 2.0
+    }
+    
+    /// 获取“转场动画上下文”，可以通过上下文获取弹出的View额消失的view
+    // .to 要去的动画
+    // .from 消失的动画
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning){
+        
+        let presentView = transitionContext.view(forKey: .to)
+        
+        
+    }
+    
     
 }
 
