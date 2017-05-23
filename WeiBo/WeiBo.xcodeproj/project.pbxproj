@@ -16,6 +16,7 @@
 		B45664C41ECDF70C00BAD01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45664C21ECDF70C00BAD01F /* LaunchScreen.storyboard */; };
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
+		B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */; };
 		B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9787E1ECE8711001D640E /* MainViewController.swift */; };
 		B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978801ECE8AEB001D640E /* HomeViewController.swift */; };
 		B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978821ECE8AFA001D640E /* MessageViewController.swift */; };
@@ -68,6 +69,7 @@
 		B45664D51ECDF70C00BAD01F /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		B4C9787E1ECE8711001D640E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B4C978801ECE8AEB001D640E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B4C978821ECE8AFA001D640E /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */,
 				B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */,
 				B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */,
+				B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */,
 				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
+				B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */,
 				B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */,
 				B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
