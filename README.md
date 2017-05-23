@@ -29,6 +29,24 @@
 5. 项目基本文件划分
 
 【当前效果】：
+<br><br>
+2017年05月19日 — 
+
+【状态】：完成项目基础配置 <br>
+【计划】：完成项目框架、加载和完善访客视图、实现和完善titleBtn的点击动画等 <br>
+【实现步骤】：<br>
+
+1. 代码实现项目框架，可根据对应的json数据动态加载VC
+2. 使用SB这中的refrence创建项目框架，用NullVC来填充中间item
+3. 完善tabbar的items布局和监听中间item的事件
+4. 创建布局并完善访客视图、不同item下设置对应访客数据
+5. 分析导航栏并设置对应左右item监听点击效果
+6. 自定义titleBtn，监听点击效果弹出自定义弹出控制器
+7. 设置Model的style和delegate监听动画过程，自定义弹出VC的frame，自定义弹出、消失动画
+8. 完善titleBtn的点击细节，封装对应转场代码，抽取弹出视图的frame和设置对应titleBtn的选中状态等
+
+【当前效果】：
+!(5.19)[http://oozx6yayl.bkt.clouddn.com/5.19WeiBo.gif]
 
 
 ## 主要页面效果如图
