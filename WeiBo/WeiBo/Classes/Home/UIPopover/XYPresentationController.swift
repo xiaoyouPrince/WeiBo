@@ -10,6 +10,10 @@ import UIKit
 
 class XYPresentationController: UIPresentationController {
     
+    // MARK: - 属性
+    /// 外部决定弹出frame  default is zero
+    var presentFrame : CGRect = CGRect.zero
+    
     fileprivate lazy var coverView : UIView = {
     
         let coverView = UIView()
@@ -31,7 +35,7 @@ class XYPresentationController: UIPresentationController {
         super.containerViewWillLayoutSubviews()
         
         // 1. 修改对应的要展示的frame
-        presentedView?.frame = CGRect(x: 100, y: 60, width: 180, height: 250)
+        presentedView?.frame = presentFrame
         
         // 2. 添加蒙版
         containerView?.insertSubview(coverView, at: 0)

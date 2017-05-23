@@ -26,7 +26,9 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate{
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
         // 这里需要自定义UIPresentationController
-        return XYPresentationController(presentedViewController: presented, presenting: presenting)
+        let presentVC = XYPresentationController(presentedViewController: presented, presenting: presenting)
+        presentVC.presentFrame = CGRect(x: 100, y: 60, width: 180, height: 250) // 设置给定的frame
+        return presentVC
     }
     
     
