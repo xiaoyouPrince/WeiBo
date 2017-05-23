@@ -14,7 +14,9 @@ class HomeViewController: BaseViewController {
     
     // MARK: - 懒加载属性
     fileprivate lazy var titleBtn : TitleButton = TitleButton()
-    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
+    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[unowned self] (dismissFinished) in
+        self.titleBtn.isSelected = dismissFinished
+    }
     
 
     override func viewDidLoad() {

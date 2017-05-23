@@ -14,6 +14,17 @@ class PopoverAnimator: NSObject {
     // MARK: - 属性
     // 用来判断是是不是弹出动画
     fileprivate var isPresent : Bool = false
+    
+    // View消失之后的传出的闭包
+    var callBack : ((_ dismissFinished : Bool) -> ())?
+    
+    
+    /// 自定义个传入闭包的构造函数
+    init(dismissFinished : @escaping ((_ : Bool) -> ())) {
+        self.callBack = dismissFinished
+    }
+    
+    
 
 }
 
@@ -45,6 +56,8 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate{
         
         
         isPresent = false
+        self.callBack!(isPresent)
+        
         return self
     }
     
@@ -59,7 +72,7 @@ extension PopoverAnimator : UIViewControllerAnimatedTransitioning{
     /// 返回动画时间
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval{
         
-        return 0.5
+        return 0.25
     }
     
     /// 获取“转场动画上下文”，可以通过上下文获取弹出的View额消失的view
