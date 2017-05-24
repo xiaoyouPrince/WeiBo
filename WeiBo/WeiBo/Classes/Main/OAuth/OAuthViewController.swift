@@ -63,6 +63,11 @@ extension OAuthViewController{
     
     @objc fileprivate func fillBtnClick(){
         
+        // 执行JS代码实现
+        let jsCode = "document.getElementById('userId').value='15369302863';document.getElementById('passwd').value='xiaoyou';"
+        
+        webView.stringByEvaluatingJavaScript(from: jsCode)
+
     }
 }
 
