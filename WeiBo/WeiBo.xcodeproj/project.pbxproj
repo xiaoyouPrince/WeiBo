@@ -21,6 +21,7 @@
 		B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC06411ED528330030E68E /* OAuthViewController.swift */; };
 		B4BC06441ED528330030E68E /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4BC06421ED528330030E68E /* OAuthViewController.xib */; };
 		B4BC06471ED53DFD0030E68E /* Commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC06461ED53DFD0030E68E /* Commen.swift */; };
+		B4BC06491ED576F90030E68E /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC06481ED576F90030E68E /* UserAccount.swift */; };
 		B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */; };
 		B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9787E1ECE8711001D640E /* MainViewController.swift */; };
 		B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978801ECE8AEB001D640E /* HomeViewController.swift */; };
@@ -80,6 +81,7 @@
 		B4BC06411ED528330030E68E /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		B4BC06421ED528330030E68E /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		B4BC06461ED53DFD0030E68E /* Commen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commen.swift; sourceTree = "<group>"; };
+		B4BC06481ED576F90030E68E /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		B4C9787E1ECE8711001D640E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B4C978801ECE8AEB001D640E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			children = (
 				B4BC06411ED528330030E68E /* OAuthViewController.swift */,
 				B4BC06421ED528330030E68E /* OAuthViewController.xib */,
+				B4BC06481ED576F90030E68E /* UserAccount.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			files = (
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
+				B4BC06491ED576F90030E68E /* UserAccount.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
 				B4BC06471ED53DFD0030E68E /* Commen.swift in Sources */,
 				B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */,

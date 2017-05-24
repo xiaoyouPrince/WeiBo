@@ -63,3 +63,23 @@ class NetworkTools {
     }
     
 }
+
+
+
+// MARK: - 获取AccessToken专用
+extension NetworkTools{
+    
+    class func loadAccessToken(code : String , finishCallBack: @escaping (_ result : [String : Any]? ) -> ()){
+        
+        let params = ["client_id" : app_key , "client_secret" : app_secret , "grant_type" : "authorization_code", "code" : code ,"redirect_uri" : redirect_uri]
+        
+        requestData(type: .POST, URLString: "https://api.weibo.com/oauth2/access_token", parameters: params) { (result) in
+        
+            finishCallBack(result as? [String : Any])
+        }
+        
+        
+        
+    }
+    
+}
