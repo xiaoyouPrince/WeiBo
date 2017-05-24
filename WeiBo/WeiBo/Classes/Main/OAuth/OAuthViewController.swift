@@ -8,11 +8,7 @@
 //  授权页面OAuth 2.0
 
 import UIKit
-
-
-private let rootUrl = "https://api.weibo.com/oauth2/authorize"
-private let client_id = "2625427871"
-private let redirect_url = "http://www.520it.com"
+import SVProgressHUD
 
 class OAuthViewController: UIViewController {
     
@@ -45,7 +41,7 @@ extension OAuthViewController{
     
     fileprivate func loadWebView(){
 
-        let Url = URL(string: "\(rootUrl)")!
+        let Url = URL(string: authUrlStr)!
         
         let request = URLRequest(url: Url)
         
@@ -68,4 +64,50 @@ extension OAuthViewController{
     @objc fileprivate func fillBtnClick(){
         
     }
+}
+
+
+// MARK: - WebView 的代理方法，监听回调地址，取得对应的access_Token
+
+extension OAuthViewController : UIWebViewDelegate{
+    
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        let url = request.url!.absoluteString
+        
+        guard url.contains("code=") else {
+            //如果不是回调，可以放行
+            return true
+        }
+        
+        //截取对应的code
+        let codeRange = url.range(of: "code=")!
+        let code = url.substring(from: codeRange.upperBound)
+   
+        print("------" + url)
+        print("------" + code)
+        
+        return false
+    }
+    
+    
+    
+    
+    // MARK: - 设置HUD
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        SVProgressHUD.dismiss()
+    }
+    
+    
+    
 }
