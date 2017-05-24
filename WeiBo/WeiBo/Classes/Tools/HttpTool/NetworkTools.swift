@@ -77,9 +77,18 @@ extension NetworkTools{
         
             finishCallBack(result as? [String : Any])
         }
-        
-        
-        
     }
+}
+
+
+// MARK: - 请求用户数据
+extension NetworkTools{
     
+    class func loadUserInfo(accessToken : String ,uid : String , finishCallBack :@escaping (_ result : Any) -> ()) {
+        
+        requestData(type: .GET, URLString: "https://api.weibo.com/2/users/show.json", parameters: ["access_token" : accessToken , "uid" : uid]) { (result) in
+            
+            finishCallBack(result)
+        }
+    }
 }

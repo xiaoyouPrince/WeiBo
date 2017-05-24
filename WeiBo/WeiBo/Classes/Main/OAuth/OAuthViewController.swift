@@ -97,6 +97,9 @@ extension OAuthViewController : UIWebViewDelegate{
         // 开始请求 access_token
         loadAcceccTokenWithCode(code: code)
         
+        // 根据access_token请求用户信息
+        
+        
         
         return false
     }
@@ -125,6 +128,7 @@ extension OAuthViewController : UIWebViewDelegate{
 // MARK: - 请求access_token专用的
 extension OAuthViewController{
     
+    /// 请求Access_token
     fileprivate func loadAcceccTokenWithCode(code : String)
     {
         NetworkTools.loadAccessToken(code: code) { (result) in
@@ -139,7 +143,26 @@ extension OAuthViewController{
             let user = UserAccount(dict: result!)
             
             print(user)
+            
+            // 请求用户信息 --- 注意闭包内调用自己的方法需要使用self
+            self.loadUserInfo(user: user)
         }
+    }
+    
+    /// 请求用户信息
+    fileprivate func loadUserInfo(user : UserAccount){
+        
+        NetworkTools.loadUserInfo(accessToken: user.access_token!, uid: user.uid!) { (result) in
+            
+            // 校验
+            let userInfoDict = result as! [String : AnyObject]
+            
+            guard userInfoDict != nil else{return}
+            
+            user.screen_name = userInfoDict["screen_name"] as! String
+            user.avatar_large = userInfoDict["avatar_large"] as! String
+        }
+        
     }
     
 }
