@@ -18,6 +18,9 @@
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
 		B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC063E1ED5236A0030E68E /* NetworkTools.swift */; };
+		B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC06411ED528330030E68E /* OAuthViewController.swift */; };
+		B4BC06441ED528330030E68E /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4BC06421ED528330030E68E /* OAuthViewController.xib */; };
+		B4BC06471ED53DFD0030E68E /* Commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC06461ED53DFD0030E68E /* Commen.swift */; };
 		B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */; };
 		B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9787E1ECE8711001D640E /* MainViewController.swift */; };
 		B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978801ECE8AEB001D640E /* HomeViewController.swift */; };
@@ -74,6 +77,9 @@
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4BC063E1ED5236A0030E68E /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		B4BC06411ED528330030E68E /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		B4BC06421ED528330030E68E /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		B4BC06461ED53DFD0030E68E /* Commen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commen.swift; sourceTree = "<group>"; };
 		B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		B4C9787E1ECE8711001D640E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B4C978801ECE8AEB001D640E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 		B401706C1ECE045400185F20 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B4BC06401ED526F00030E68E /* OAuth */,
 				B4C9789B1ECEF5CA001D640E /* Visitor */,
 				B4C978881ECE99FB001D640E /* Resource */,
 				B4C9787E1ECE8711001D640E /* MainViewController.swift */,
@@ -259,6 +266,23 @@
 			path = HttpTool;
 			sourceTree = "<group>";
 		};
+		B4BC06401ED526F00030E68E /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				B4BC06411ED528330030E68E /* OAuthViewController.swift */,
+				B4BC06421ED528330030E68E /* OAuthViewController.xib */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		B4BC06451ED53DE90030E68E /* Commen */ = {
+			isa = PBXGroup;
+			children = (
+				B4BC06461ED53DFD0030E68E /* Commen.swift */,
+			);
+			path = Commen;
+			sourceTree = "<group>";
+		};
 		B4C978881ECE99FB001D640E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +295,7 @@
 		B4C978981ECEEBD3001D640E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B4BC06451ED53DE90030E68E /* Commen */,
 				B4BC063D1ED522EC0030E68E /* HttpTool */,
 				B4D3EA921ECFD3A9004D554B /* Category */,
 				B4D3EA971ECFD3C3004D554B /* TitleButton.swift */,
@@ -425,6 +450,7 @@
 				B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */,
 				B4C9788D1ECEC4CF001D640E /* Home.storyboard in Resources */,
 				B4C978941ECEC507001D640E /* Profile.storyboard in Resources */,
+				B4BC06441ED528330030E68E /* OAuthViewController.xib in Resources */,
 				B45664C11ECDF70C00BAD01F /* Assets.xcassets in Resources */,
 				B4C9788A1ECE99FB001D640E /* MainVCSettings.json in Resources */,
 				B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */,
@@ -507,7 +533,9 @@
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
+				B4BC06471ED53DFD0030E68E /* Commen.swift in Sources */,
 				B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */,
+				B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */,
 				B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
 				B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */,

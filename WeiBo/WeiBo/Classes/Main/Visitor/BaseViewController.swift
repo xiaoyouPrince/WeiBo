@@ -63,11 +63,22 @@ extension BaseViewController{
     
     @objc fileprivate func registerBtnClick() {
         print("注册按钮点击----")
+        
+//        UIAlertView(title: "你好", message: "新浪官方未开放此接口", delegate: nil, cancelButtonTitle: "确定").show()
+
     }
     
     
     @objc fileprivate func loginBtnClick() {
         print("登录按钮点击----")
+        
+        // 进授权页面
+        let oauthVC = OAuthViewController()
+        
+        let nav = UINavigationController(rootViewController: oauthVC)
+        
+        present(nav, animated: true, completion: nil)
+        
     }
     
 }
