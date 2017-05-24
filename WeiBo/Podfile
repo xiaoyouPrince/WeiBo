@@ -1,0 +1,14 @@
+platform :ios, '9.0'
+
+use_frameworks!
+
+target 'WeiBo' do
+
+pod 'Alamofire', '~> 4.4'
+pod 'Kingfisher', '~> 3.1.1'
+pod 'SVProgressHUD'
+pod 'SnapKit'
+
+
+
+end

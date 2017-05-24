@@ -10,8 +10,6 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-    
-    
     // MARK: - 懒加载属性
     fileprivate lazy var titleBtn : TitleButton = TitleButton()
     fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[unowned self] (dismissFinished) in
