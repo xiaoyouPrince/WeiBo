@@ -31,6 +31,12 @@ class HomeViewController: BaseViewController {
         // 登录之后的页面
         setupNavigationBar()
         
+        
+        NetworkTools.requestData(type: .GET, URLString: "http://www.httpbin.org/get", parameters: ["name":"quxiaoyou"]) { (resoult) in
+        
+            print(resoult)
+        }
+        
     }
 }
 

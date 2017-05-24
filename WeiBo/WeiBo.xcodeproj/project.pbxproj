@@ -17,6 +17,7 @@
 		B45664C41ECDF70C00BAD01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45664C21ECDF70C00BAD01F /* LaunchScreen.storyboard */; };
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
+		B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC063E1ED5236A0030E68E /* NetworkTools.swift */; };
 		B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */; };
 		B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9787E1ECE8711001D640E /* MainViewController.swift */; };
 		B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C978801ECE8AEB001D640E /* HomeViewController.swift */; };
@@ -72,6 +73,7 @@
 		B45664D51ECDF70C00BAD01F /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BC063E1ED5236A0030E68E /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		B4C5F5CC1ED4250300564972 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		B4C9787E1ECE8711001D640E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B4C978801ECE8AEB001D640E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 			path = WeiBoUITests;
 			sourceTree = "<group>";
 		};
+		B4BC063D1ED522EC0030E68E /* HttpTool */ = {
+			isa = PBXGroup;
+			children = (
+				B4BC063E1ED5236A0030E68E /* NetworkTools.swift */,
+			);
+			path = HttpTool;
+			sourceTree = "<group>";
+		};
 		B4C978881ECE99FB001D640E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		B4C978981ECEEBD3001D640E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B4BC063D1ED522EC0030E68E /* HttpTool */,
 				B4D3EA921ECFD3A9004D554B /* Category */,
 				B4D3EA971ECFD3C3004D554B /* TitleButton.swift */,
 			);
@@ -497,6 +508,7 @@
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,
 				B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */,
+				B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
 				B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */,
 				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
