@@ -161,6 +161,19 @@ extension OAuthViewController{
             
             user.screen_name = userInfoDict["screen_name"] as! String
             user.avatar_large = userInfoDict["avatar_large"] as! String
+            
+            
+            // 对用户基本信息进行归档
+            // 获取路径
+            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+            accountPath = (accountPath! as NSString).strings(byAppendingPaths: ["account.plist"]).first
+            print(accountPath!)
+            
+            // 归档文件
+            NSKeyedArchiver.archiveRootObject(user, toFile: accountPath!)
+            
+            // 归档完成，进入对应的程序页面
+            self.dismiss(animated: true, completion: nil)
         }
         
     }

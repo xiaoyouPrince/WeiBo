@@ -20,6 +20,18 @@ class BaseViewController: UITableViewController {
     // MARK: - 系统调用
     override func loadView() {
         
+        // 取得登录信息进行判断是否过期
+        var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        accountPath = (accountPath as NSString).strings(byAppendingPaths: ["account.plist"]).first!
+        
+        // 解档
+        let user = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath) as? UserAccount
+
+        // 从文件中得出用户是不是已经登录并赋值
+        if let expires_date = user?.expires_date {
+            isLogin = expires_date.compare(Date()) == ComparisonResult.orderedDescending
+        }
+        
         isLogin ? super.loadView() : setupVisitorView()
     }
 
