@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5BB4D16FB57EB5EE75ECE37E /* Pods_WeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88448C91CFE995C2705B9064 /* Pods_WeiBo.framework */; };
+		B4030E1B1ED6726A00E48DE9 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4030E1A1ED6726A00E48DE9 /* UserAccountViewModel.swift */; };
 		B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */; };
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
 		B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		4F845EC9E9752E8E88B767AE /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		88448C91CFE995C2705B9064 /* Pods_WeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4030E1A1ED6726A00E48DE9 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYPresentationController.swift; sourceTree = "<group>"; };
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				B4BC06411ED528330030E68E /* OAuthViewController.swift */,
 				B4BC06421ED528330030E68E /* OAuthViewController.xib */,
 				B4BC06481ED576F90030E68E /* UserAccount.swift */,
+				B4030E1A1ED6726A00E48DE9 /* UserAccountViewModel.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
 				B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */,
+				B4030E1B1ED6726A00E48DE9 /* UserAccountViewModel.swift in Sources */,
 				B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */,
 				B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
