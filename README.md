@@ -48,6 +48,26 @@
 【当前效果】：<br>
 ![5.19](http://oozx6yayl.bkt.clouddn.com/5.19WeiBo.gif)
 
+<br><br>
+2017年05月23日 — 
+
+【状态】：完成项目框架、加载和完善访客视图、实现和完善titleBtn的点击动画等 <br>
+【计划】：集成CocoaPod，导入三方框架，完成微博Oauth授权，完善登录和欢迎页面逻辑等 <br>
+【实现步骤】：<br>
+
+1. 集成CocoaPods,导入Alamofire，SDWebImage等常用三方框架
+2. 封装一个自己的网络层工具，和Alamofire进行分层
+3. 新浪Oauth授权的分析和授权页面的布局（XIB）
+4. 加载登录页面，执行JS代码自动填充账号密码。
+5. 获取Oauth授权code并通过code请求到accessToken
+6. 封装一个UserAccount类封装对应的授权信息，并处理过期时间（秒数转成日期）
+7. 通过accesstoken请求用户信息，归档和解档 account 对象
+8. 封装UserAccountViewModel，更方便的管理用户信息
+9. 布局欢迎界面，并处理欢迎界面的逻辑
+
+【当前效果】：<br>
+![5.23](http://oozx6yayl.bkt.clouddn.com/5.23WeiBo.gif)
+
 
 ## 主要页面效果如图
 
