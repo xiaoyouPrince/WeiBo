@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="WeiBo" customModuleProvider="target">
+            <connections>
+                <outlet property="iconBottomConstraint" destination="et1-EK-bhq" id="Rz1-jv-kBm"/>
+                <outlet property="iconView" destination="G3U-y8-1JZ" id="x5G-lY-gFM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-Tj-5TT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="G3U-y8-1JZ">
+                    <rect key="frame" x="137" y="467" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Qd8-Fn-DzI"/>
+                        <constraint firstAttribute="width" constant="100" id="drf-hE-sg1"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-EJ-xuc">
+                    <rect key="frame" x="152.5" y="587" width="69.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="G3U-y8-1JZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5Pp-1T-YYp"/>
+                <constraint firstItem="hk2-EJ-xuc" firstAttribute="top" secondItem="G3U-y8-1JZ" secondAttribute="bottom" constant="20" id="D4g-zT-gfk"/>
+                <constraint firstAttribute="bottom" secondItem="pSc-Tj-5TT" secondAttribute="bottom" id="PqZ-25-kdZ"/>
+                <constraint firstItem="pSc-Tj-5TT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V8I-iC-7fp"/>
+                <constraint firstAttribute="bottom" secondItem="G3U-y8-1JZ" secondAttribute="bottom" constant="100" id="et1-EK-bhq"/>
+                <constraint firstItem="pSc-Tj-5TT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rHS-Ej-VaJ"/>
+                <constraint firstAttribute="trailing" secondItem="pSc-Tj-5TT" secondAttribute="trailing" id="tvw-Z6-CdD"/>
+                <constraint firstItem="hk2-EJ-xuc" firstAttribute="centerX" secondItem="G3U-y8-1JZ" secondAttribute="centerX" id="yVJ-Qk-1nx"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="16" height="16"/>
+        <image name="avatar_default" width="50" height="50"/>
+    </resources>
+</document>

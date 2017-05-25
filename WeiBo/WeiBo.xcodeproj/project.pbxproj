@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5BB4D16FB57EB5EE75ECE37E /* Pods_WeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88448C91CFE995C2705B9064 /* Pods_WeiBo.framework */; };
 		B4030E1B1ED6726A00E48DE9 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4030E1A1ED6726A00E48DE9 /* UserAccountViewModel.swift */; };
+		B4030E1F1ED680ED00E48DE9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */; };
+		B4030E201ED680ED00E48DE9 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */; };
 		B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */; };
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
 		B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */; };
@@ -64,6 +66,8 @@
 		4F845EC9E9752E8E88B767AE /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		88448C91CFE995C2705B9064 /* Pods_WeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4030E1A1ED6726A00E48DE9 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYPresentationController.swift; sourceTree = "<group>"; };
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		B401706C1ECE045400185F20 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B4030E1C1ED680D900E48DE9 /* Welcome */,
 				B4BC06401ED526F00030E68E /* OAuth */,
 				B4C9789B1ECEF5CA001D640E /* Visitor */,
 				B4C978881ECE99FB001D640E /* Resource */,
@@ -207,6 +212,15 @@
 				B4C978861ECE8B14001D640E /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B4030E1C1ED680D900E48DE9 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */,
+				B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		B45664AD1ECDF70C00BAD01F = {
@@ -455,6 +469,7 @@
 				B45664C41ECDF70C00BAD01F /* LaunchScreen.storyboard in Resources */,
 				B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */,
 				B4C9788D1ECEC4CF001D640E /* Home.storyboard in Resources */,
+				B4030E201ED680ED00E48DE9 /* WelcomeViewController.xib in Resources */,
 				B4C978941ECEC507001D640E /* Profile.storyboard in Resources */,
 				B4BC06441ED528330030E68E /* OAuthViewController.xib in Resources */,
 				B45664C11ECDF70C00BAD01F /* Assets.xcassets in Resources */,
@@ -537,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
+				B4030E1F1ED680ED00E48DE9 /* WelcomeViewController.swift in Sources */,
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
 				B4BC06491ED576F90030E68E /* UserAccount.swift in Sources */,
 				B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */,

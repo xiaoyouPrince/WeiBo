@@ -22,9 +22,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.orange
         
         
+        // 设置展示主控制器
+        setupRootViewController()
+        
+        
 
         return true
     }
+    
+    /// 设置展示主控制器
+    func setupRootViewController() {
+        
+        !UserAccountViewModel.shareInstance.isLogin ? gotoMainViewController() : gotoCodeViewController()
+    }
+    
+    func gotoMainViewController() {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+        window?.makeKeyAndVisible()
+        
+    }
+    
+    func gotoCodeViewController() {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = WelcomeViewController()
+        window?.makeKeyAndVisible()
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

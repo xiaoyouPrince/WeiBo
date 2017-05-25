@@ -166,8 +166,15 @@ extension OAuthViewController{
             // 对用户基本信息进行归档
             UserAccountViewModel.shareInstance.archiveAccount(user)
             
+            // 对用户 account 属性进行赋值，保证下次取值的时候有，，
+            UserAccountViewModel.shareInstance.account = user
+            
             // 归档完成，进入对应的程序页面
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
+            
+            
         }
         
     }

@@ -58,7 +58,6 @@ class UserAccountViewModel: NSObject {
     }
     
     
-    
     // 重写新建
     override init() {
         super.init()
