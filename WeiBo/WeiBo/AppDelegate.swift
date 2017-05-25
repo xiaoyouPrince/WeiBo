@@ -12,6 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    /// 计算属性，返回默认的跟控制器
+    var defaultViewController : UIViewController? {
+        
+        // 根据是否登录得到哪个VC
+        let rootVc = UserAccountViewModel.shareInstance.isLogin ? WelcomeViewController() : UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+        
+        return rootVc
+    }
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -23,33 +33,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // 设置展示主控制器
-        setupRootViewController()
+//        setupRootViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = defaultViewController
         
-        
-
         return true
     }
     
     /// 设置展示主控制器
-    func setupRootViewController() {
-        
-        !UserAccountViewModel.shareInstance.isLogin ? gotoMainViewController() : gotoCodeViewController()
-    }
+//    func setupRootViewController() {
+//        
+//        UserAccountViewModel.shareInstance.isLogin ? gotoCodeViewController() : gotoMainViewController()
+//    }
     
-    func gotoMainViewController() {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
-        window?.makeKeyAndVisible()
-        
-    }
-    
-    func gotoCodeViewController() {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = WelcomeViewController()
-        window?.makeKeyAndVisible()
-    }
+//    func gotoMainViewController() {
+//        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+//        window?.makeKeyAndVisible()
+//        
+//    }
+//    
+//    func gotoCodeViewController() {
+//        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = WelcomeViewController()
+//        window?.makeKeyAndVisible()
+//    }
     
 
     func applicationWillResignActive(_ application: UIApplication) {

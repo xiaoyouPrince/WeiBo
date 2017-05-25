@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        isLogin = true
+//        isLogin = true
         
         // 未登录时候的页面
         visitorView.addRotationAnim()
