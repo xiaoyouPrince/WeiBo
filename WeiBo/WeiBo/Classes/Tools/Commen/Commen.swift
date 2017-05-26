@@ -24,8 +24,6 @@ let redirect_uri = "http://www.520it.com"
 let authUrlStr = "\(rootUrl)?client_id=\(app_key)&redirect_uri=\(redirect_uri)"
 
 
-/// 个人用户获取到的code -- xiaoyouPrince
-//private let code = "4c963f384d0c98757d47c16e6d51e721"
 
 
 

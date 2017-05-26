@@ -92,3 +92,30 @@ extension NetworkTools{
         }
     }
 }
+
+
+extension NetworkTools{
+    
+    class func loadHomeData(finishCallBack:@escaping (_ result : [[String : AnyObject]]? ) -> ()){
+        
+        // 请求接口
+        print(homgDataUrl + "?access_token" + UserAccountViewModel.shareInstance.account!.access_token!)
+        
+        requestData(type: .GET, URLString: homgDataUrl, parameters: ["access_token" : UserAccountViewModel.shareInstance.account!.access_token!]) { (result) in
+            
+            // 简单处理，之返回微博数据
+            guard result is [String : AnyObject] else{
+                return
+            }
+            
+            guard let statusesArray = result["statuses"] as? [[String : AnyObject]] else {
+                return
+            }
+            
+            finishCallBack(statusesArray)
+
+            
+        }
+        
+    }
+}

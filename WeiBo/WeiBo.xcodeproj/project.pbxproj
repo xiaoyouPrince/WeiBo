@@ -12,6 +12,8 @@
 		B4030E1F1ED680ED00E48DE9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */; };
 		B4030E201ED680ED00E48DE9 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */; };
 		B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */; };
+		B447F47E1ED73DF7005DBAB0 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447F47D1ED73DF7005DBAB0 /* URL.swift */; };
+		B447F4811ED742E3005DBAB0 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447F4801ED742E3005DBAB0 /* Status.swift */; };
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
 		B44DDDB71ECF2F70002AF0AD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */; };
 		B45664BA1ECDF70C00BAD01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664B91ECDF70C00BAD01F /* AppDelegate.swift */; };
@@ -69,6 +71,8 @@
 		B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYPresentationController.swift; sourceTree = "<group>"; };
+		B447F47D1ED73DF7005DBAB0 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		B447F4801ED742E3005DBAB0 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B44DDDB61ECF2F70002AF0AD /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		B45664B61ECDF70C00BAD01F /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +181,7 @@
 		B401706B1ECE045400185F20 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B447F47F1ED742D8005DBAB0 /* HomeModel */,
 				B4D6F9FC1ECFE5DA00DA609F /* UIPopover */,
 				B4C9788B1ECEC4CF001D640E /* Home.storyboard */,
 				B4C978801ECE8AEB001D640E /* HomeViewController.swift */,
@@ -221,6 +226,22 @@
 				B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		B447F47C1ED73DCC005DBAB0 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				B447F47D1ED73DF7005DBAB0 /* URL.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		B447F47F1ED742D8005DBAB0 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				B447F4801ED742E3005DBAB0 /* Status.swift */,
+			);
+			path = HomeModel;
 			sourceTree = "<group>";
 		};
 		B45664AD1ECDF70C00BAD01F = {
@@ -315,6 +336,7 @@
 		B4C978981ECEEBD3001D640E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B447F47C1ED73DCC005DBAB0 /* Public */,
 				B4BC06451ED53DE90030E68E /* Commen */,
 				B4BC063D1ED522EC0030E68E /* HttpTool */,
 				B4D3EA921ECFD3A9004D554B /* Category */,
@@ -566,8 +588,10 @@
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
 				B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */,
 				B4030E1B1ED6726A00E48DE9 /* UserAccountViewModel.swift in Sources */,
+				B447F4811ED742E3005DBAB0 /* Status.swift in Sources */,
 				B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */,
 				B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */,
+				B447F47E1ED73DF7005DBAB0 /* URL.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
 				B4C978851ECE8B09001D640E /* DiscoverViewController.swift in Sources */,

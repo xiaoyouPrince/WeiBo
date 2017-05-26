@@ -33,34 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // 设置展示主控制器
-//        setupRootViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = defaultViewController
         
         return true
     }
-    
-    /// 设置展示主控制器
-//    func setupRootViewController() {
-//        
-//        UserAccountViewModel.shareInstance.isLogin ? gotoCodeViewController() : gotoMainViewController()
-//    }
-    
-//    func gotoMainViewController() {
-//        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
-//        window?.makeKeyAndVisible()
-//        
-//    }
-//    
-//    func gotoCodeViewController() {
-//        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = WelcomeViewController()
-//        window?.makeKeyAndVisible()
-//    }
     
 
     func applicationWillResignActive(_ application: UIApplication) {

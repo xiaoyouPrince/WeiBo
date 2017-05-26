@@ -16,6 +16,9 @@ class HomeViewController: BaseViewController {
         self.titleBtn.isSelected = dismissFinished
     }
     
+    var statuses : [Status] = [Status]()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +35,8 @@ class HomeViewController: BaseViewController {
         setupNavigationBar()
         
         
-        NetworkTools.requestData(type: .GET, URLString: "http://www.httpbin.org/get", parameters: ["name":"quxiaoyou"]) { (resoult) in
-        
-            print(resoult)
-        }
+        // 请求数据
+        loadData()
         
     }
 }
@@ -70,7 +71,7 @@ extension HomeViewController{
         // 1. 修改对应状态
         titleBtn.isSelected = !titleBtn.isSelected
         
-        // 2.弹出popover菜单
+        // 2. 弹出popover菜单
         let pop = PopoverViewController()
         
         // 3. 重要--设置Model样式为保留之前VC们
@@ -86,8 +87,49 @@ extension HomeViewController{
 }
 
 
+extension HomeViewController{
+    
+    func loadData() {
+        
+        NetworkTools.loadHomeData { (result) in
+            
+            guard let statusArray = result else{return}
+            
+            for dict in statusArray{
+                
+                let status = Status(dict : dict)
+                
+                self.statuses.append(status)
+            }
+    
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+}
 
 
+// MARK: - tableView展示数据
+extension HomeViewController{
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.statuses.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell")!
+        
+        let status = self.statuses[indexPath.row]
+        
+        cell.textLabel?.text = status.source
+        
+        return cell
+        
+    }
+    
+}
 
 
 
