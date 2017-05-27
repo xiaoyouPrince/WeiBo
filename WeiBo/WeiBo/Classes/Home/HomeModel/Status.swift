@@ -15,8 +15,7 @@ class Status: NSObject {
         didSet{
             
             // Fri May 26 14:54:14 +0800 2017
-            
-            
+            creatTimeStr = Date.creatDateString(creatAtString: created_at!)
         }
     }
     var text : String?              /// 微博正文
@@ -39,7 +38,10 @@ class Status: NSObject {
         }
     }
     var id : Int = 0               /// 微博ID
-    var sourceText : String?
+    var sourceText : String?       /// 微博正文，经过处理后直接使用
+    var creatTimeStr : String?     /// 微博正文，经过处理后直接使用
+
+    
     
     
     

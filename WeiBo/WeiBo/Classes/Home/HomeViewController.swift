@@ -123,7 +123,8 @@ extension HomeViewController{
         
         let status = self.statuses[indexPath.row]
         
-        cell.textLabel?.text = status.source
+        cell.textLabel?.text = status.sourceText
+        cell.detailTextLabel?.text = status.creatTimeStr
         
         return cell
         
