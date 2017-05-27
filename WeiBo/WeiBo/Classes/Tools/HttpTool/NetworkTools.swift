@@ -5,7 +5,7 @@
 //  Created by 渠晓友 on 2017/5/24.
 //  Copyright © 2017年 xiaoyouPrince. All rights reserved.
 //
-//  封装一个网络框架（基于alamofire）
+//  封装一个网络请求工具（基于alamofire）
 
 import UIKit
 import Alamofire

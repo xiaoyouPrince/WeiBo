@@ -16,7 +16,6 @@ class HomeViewController: BaseViewController {
         self.titleBtn.isSelected = dismissFinished
     }
     
-//    var statuses : [Status] = [Status]()
     var statusViewModels : [StatusViewModel] = [StatusViewModel]()
     
     
@@ -101,7 +100,6 @@ extension HomeViewController{
                 
                 let status = Status(dict : dict)
                 
-//                self.statuses.append(status)
                 self.statusViewModels.append(StatusViewModel(status: status))
             }
     
@@ -117,7 +115,6 @@ extension HomeViewController{
 extension HomeViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.statuses.count
         return self.statusViewModels.count
     }
     
@@ -125,12 +122,8 @@ extension HomeViewController{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell")!
         
-//        let status = self.statuses[indexPath.row]
         let statusVm = self.statusViewModels[indexPath.row]
         
-        
-//        cell.textLabel?.text = status.sourceText
-//        cell.detailTextLabel?.text = status.user?.screen_name
         cell.textLabel?.text = statusVm.sourceText
         cell.detailTextLabel?.text = statusVm.creatTimeStr
         
