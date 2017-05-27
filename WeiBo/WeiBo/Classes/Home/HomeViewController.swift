@@ -39,6 +39,10 @@ class HomeViewController: BaseViewController {
         // 请求数据
         loadData()
         
+        /// 设置估算tableView的高度
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        
     }
 }
 
@@ -46,6 +50,14 @@ class HomeViewController: BaseViewController {
 // MARK: - 创建UI
 
 extension HomeViewController{
+    
+    /// buildUI
+    func buildUI() {
+        
+        
+        
+        setupNavigationBar()
+    }
     
     /// 设置导航栏
     func setupNavigationBar() {
