@@ -47,6 +47,7 @@
 		B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */; };
 		B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */; };
 		B4F0F70F1ED91ECA009298EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F70E1ED91ECA009298EA /* User.swift */; };
+		B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7101ED93040009298EA /* StatusViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		B4F0F70E1ED91ECA009298EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B4F0F7101ED93040009298EA /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		C2F68B2B67764D719C45BB2E /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 			children = (
 				B447F4801ED742E3005DBAB0 /* Status.swift */,
 				B4F0F70E1ED91ECA009298EA /* User.swift */,
+				B4F0F7101ED93040009298EA /* StatusViewModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */,
 				B447F47E1ED73DF7005DBAB0 /* URL.swift in Sources */,
 				B4F0F70F1ED91ECA009298EA /* User.swift in Sources */,
+				B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
 				B4C978851ECE8B09001D640E /* DiscoverViewController.swift in Sources */,
