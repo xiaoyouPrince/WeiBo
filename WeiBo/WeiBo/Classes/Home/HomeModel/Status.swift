@@ -38,6 +38,8 @@ class Status: NSObject {
         }
     }
     var id : Int = 0               /// 微博ID
+    var user : User?               /// 用户类型
+    
     var sourceText : String?       /// 微博正文，经过处理后直接使用
     var creatTimeStr : String?     /// 微博正文，经过处理后直接使用
 
@@ -54,6 +56,10 @@ class Status: NSObject {
         super.init()
         
         setValuesForKeys(dict)
+        
+        if let userDict = dict["user"] as? [String : AnyObject] {
+            user = User.init(dict: userDict)
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {  }

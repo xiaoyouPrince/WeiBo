@@ -124,7 +124,7 @@ extension HomeViewController{
         let status = self.statuses[indexPath.row]
         
         cell.textLabel?.text = status.sourceText
-        cell.detailTextLabel?.text = status.creatTimeStr
+        cell.detailTextLabel?.text = status.user?.screen_name
         
         return cell
         
