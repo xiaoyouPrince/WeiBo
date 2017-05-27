@@ -120,12 +120,9 @@ extension HomeViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeViewCell
         
-        let statusVm = self.statusViewModels[indexPath.row]
-        
-        cell.textLabel?.text = statusVm.sourceText
-        cell.detailTextLabel?.text = statusVm.creatTimeStr
+        cell.statusVM = self.statusViewModels[indexPath.row]
         
         return cell
         

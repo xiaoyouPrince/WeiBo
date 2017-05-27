@@ -62,7 +62,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是我的第一条微博" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-Rf-HXY" userLabel="微博正文">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是我的第一条微博" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-Rf-HXY" userLabel="微博正文">
                                             <rect key="frame" x="15" y="70" width="119.5" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="119.5" id="Lpc-XA-fnF"/>
@@ -97,7 +97,14 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contentLabel" destination="ylK-Rf-HXY" id="jW3-l8-vbN"/>
                                     <outlet property="contentLabelWidthConstraint" destination="Lpc-XA-fnF" id="B0Q-NW-aHG"/>
+                                    <outlet property="creatAtLabel" destination="oRA-mV-9aX" id="4gA-xi-tHP"/>
+                                    <outlet property="iconImage" destination="NKL-Aw-RNu" id="Stw-0a-eGb"/>
+                                    <outlet property="sourceLabel" destination="xBu-pI-iei" id="CDI-XC-vqI"/>
+                                    <outlet property="userNameLabel" destination="Jmq-rQ-y6h" id="ubz-av-zPj"/>
+                                    <outlet property="vertifyIcon" destination="9zU-VA-M2J" id="bhC-wb-Y0W"/>
+                                    <outlet property="vipIcon" destination="HPq-V9-Y8R" id="hje-S6-hUj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
