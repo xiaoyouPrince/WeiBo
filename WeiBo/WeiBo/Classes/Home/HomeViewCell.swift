@@ -18,7 +18,8 @@ class HomeViewCell: UITableViewCell {
             
             if let viewModel = statusVM {
                 
-                iconImage.sd_setImage(with: URL(string : (viewModel.status.user?.profile_image_url)!))
+//                iconImage.sd_setImage(with: URL(string : (viewModel.status.user?.profile_image_url)!))
+                iconImage.sd_setImage(with: statusVM?.profileURL)
                 vertifyIcon.image = viewModel.verifiedImage
                 vipIcon.image = viewModel.vipImage
                 userNameLabel.text = viewModel.status.user?.screen_name

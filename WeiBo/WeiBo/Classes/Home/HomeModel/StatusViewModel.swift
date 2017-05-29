@@ -12,12 +12,14 @@ import UIKit
 class StatusViewModel: NSObject {
     
     var status : Status
-    
-    
+
     var sourceText : String?       /// 微博正文，经过处理后直接使用
     var creatTimeStr : String?     /// 微博正文，经过处理后直接使用
     var verifiedImage : UIImage?   /// 用户认证图片
     var vipImage : UIImage?        /// 用户会员等级图片
+    var profileURL : URL?          /// 用户头像的处理
+    var picURLs : [URL]?           /// 微博配图的处理
+    
     
     init( status : Status ){
         
@@ -61,7 +63,23 @@ class StatusViewModel: NSObject {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
         
-
+        
+        // 5. 用户头像的处理
+        let profile_url = status.user?.profile_image_url ?? ""
+        profileURL = URL(string: profile_url)
+        
+        // 6.处理微博配图
+        if let picurlDicts = status.pic_urls {
+            
+            for picurlDict in picurlDicts{
+                
+                guard let picUrlString = picurlDict["thumbnail_pic"] else {
+                    continue
+                }
+                picURLs?.append(URL(string : picUrlString)!)
+                
+            }
+        }
         
     }
 }
