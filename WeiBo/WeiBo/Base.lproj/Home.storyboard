@@ -145,7 +145,7 @@
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-WU-zBX">
                                             <rect key="frame" x="15" y="108" width="235" height="104"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.047743055555555552" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="104" id="2P8-Gd-c4k"/>
                                                 <constraint firstAttribute="width" constant="235" id="hWM-Vn-RZH"/>
@@ -196,6 +196,7 @@
                                     <outlet property="contentLabelWidthConstraint" destination="Lpc-XA-fnF" id="B0Q-NW-aHG"/>
                                     <outlet property="creatAtLabel" destination="oRA-mV-9aX" id="4gA-xi-tHP"/>
                                     <outlet property="iconImage" destination="NKL-Aw-RNu" id="Stw-0a-eGb"/>
+                                    <outlet property="picView" destination="4wT-WU-zBX" id="VMR-eH-nQn"/>
                                     <outlet property="sourceLabel" destination="xBu-pI-iei" id="CDI-XC-vqI"/>
                                     <outlet property="userNameLabel" destination="Jmq-rQ-y6h" id="ubz-av-zPj"/>
                                     <outlet property="vertifyIcon" destination="9zU-VA-M2J" id="bhC-wb-Y0W"/>

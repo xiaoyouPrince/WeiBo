@@ -47,6 +47,9 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     /// 微博正文
     @IBOutlet weak var contentLabel: UILabel!
+    /// 微博图片内容
+    @IBOutlet weak var picView: UICollectionView!
+
     
     // MARK: - 系统回调
     override func awakeFromNib() {
