@@ -71,8 +71,8 @@
 <br><br>
 2017年05月25日 — 
 
-【状态】：完成项目框架、加载和完善访客视图、实现和完善titleBtn的点击动画等 <br>
-【计划】：集成CocoaPod，导入三方框架，完成微博Oauth授权，完善登录和欢迎页面逻辑等 <br>
+【状态】：完成项目授权、登录和欢迎页面逻辑等 <br>
+【计划】：实现微博首页微博展示和主页功能 <br>
 【实现步骤】：<br>
 
 1. 集成CocoaPods,导入Alamofire，SDWebImage等常用三方框架
@@ -96,3 +96,5 @@
 - 直接clone/download到本地
 - 打开终端到项目路径下执行 'pod update' 安装Pod依赖，(默认你CocoaPod已经装好)
 - 打开Xcode运行程序
+
+
