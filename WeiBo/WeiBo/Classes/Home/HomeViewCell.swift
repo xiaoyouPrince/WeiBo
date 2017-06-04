@@ -55,6 +55,7 @@ class HomeViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        // 一次性设置内容Label的宽度，来以此准确的自动计算内容Label的高度。
         contentLabelWidthConstraint.constant = kScreenW - 2 * 15
     }
 
