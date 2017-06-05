@@ -35,8 +35,9 @@ class HomeViewCell: UITableViewCell {
                 picVIewWcons.constant = self.calculatePicViewSize(count: (statusVM?.picURLs.count ?? 0)! ).width
                 picView.picUrls = (statusVM?.picURLs)!
                 // 设置转发微博的内容
-                if let retweetText = statusVM?.status.retweeted_status?.text {
-                    retweetContentLabel.text = retweetText
+                if let retweetText = statusVM?.status.retweeted_status?.text , let screenName = statusVM?.status.retweeted_status?.user?.screen_name{
+
+                    retweetContentLabel.text = "@" + "\(screenName):" + retweetText
                 }else{
                     retweetContentLabel.text = nil
                 }

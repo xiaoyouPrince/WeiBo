@@ -69,7 +69,9 @@ class StatusViewModel: NSObject {
         profileURL = URL(string: profile_url)
         
         // 6.处理微博配图
-        if let picurlDicts = status.pic_urls {
+        let picURLS = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+   
+        if let picurlDicts = picURLS {
             
             for picurlDict in picurlDicts{
                 
