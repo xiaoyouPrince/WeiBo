@@ -38,8 +38,19 @@ class HomeViewCell: UITableViewCell {
                 if let retweetText = statusVM?.status.retweeted_status?.text , let screenName = statusVM?.status.retweeted_status?.user?.screen_name{
 
                     retweetContentLabel.text = "@" + "\(screenName):" + retweetText
+                    
+                    // 设置装发微博背景
+                    retweetStatusBGView.isHidden = false
+                    
+                    // 设置转发正文的约束
+                    retweetContentBottomCons.constant = 10
+                    
                 }else{
                     retweetContentLabel.text = nil
+                    retweetStatusBGView.isHidden = true
+                    
+                    // 设置转发正文的约束
+                    retweetContentBottomCons.constant = 0
                 }
             }
         }
@@ -51,6 +62,8 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var picViewHcons: NSLayoutConstraint!
     /// picView 的宽度约束
     @IBOutlet weak var picVIewWcons: NSLayoutConstraint!
+    @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetContentBottomCons: NSLayoutConstraint!
     
     
     
@@ -72,6 +85,8 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var picView: PicCollectionView!
     /// 转发微博内容
     @IBOutlet weak var retweetContentLabel: UILabel!
+    /// 转发微博背景
+    @IBOutlet weak var retweetStatusBGView: UIView!
 
     
     // MARK: - 系统回调
@@ -107,8 +122,15 @@ extension HomeViewCell{
         
         // 1.没有配图
         if count == 0 {
+            
+            // 修改picView底部约束
+            picViewBottomCons.constant = 0
+            
             return CGSize.zero
         }
+        
+        // 修改picView底部约束
+        picViewBottomCons.constant = 10
         
         // 2.取到collectionView的layout
         let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
