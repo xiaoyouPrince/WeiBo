@@ -73,9 +73,9 @@ class HomeViewCell: UITableViewCell {
         contentLabelWidthConstraint.constant = kScreenW - 2 * 15
         
         // 设置 picView 的 itemLayout 
-        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
-        let imageViewWH : CGFloat = (kScreenW - 2 * edgeMargin - 2 * itemMargin) / 3
-        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+//        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+//        let imageViewWH : CGFloat = (kScreenW - 2 * edgeMargin - 2 * itemMargin) / 3
+//        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -95,21 +95,41 @@ extension HomeViewCell{
     /// - Returns: Size
     fileprivate func calculatePicViewSize(count : Int) -> CGSize {
         
-        // 没有配图
+        
+        // 1.没有配图
         if count == 0 {
             return CGSize.zero
         }
         
-        // 计算imageView的WH
-        let imageViewWH : CGFloat = (kScreenW - 2 * edgeMargin - 2 * itemMargin) / 3
+        // 2.取到collectionView的layout
+        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+
         
-        // 4张配图
+        // 3.单张配图
+        if count == 1 {
+            
+            // 3.1取出缓存图片，根据该图片的Size进行返回
+            let imageurl = self.statusVM?.picURLs.first?.absoluteString
+            let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: imageurl)
+            
+            // 3.2 设置单张配图的layout.itemSize
+            layout.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+
+            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+        }
+        
+        // 4.计算多张配图imageView的WH
+        let imageViewWH : CGFloat = (kScreenW - 2 * edgeMargin - 2 * itemMargin) / 3
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+
+        
+        // 5.张配图
         if count == 4 {
             let picViewWH = imageViewWH * 2 + itemMargin
             return CGSize(width: picViewWH, height: picViewWH)
         }
         
-        // 其他张数配图
+        // 6.其他张数配图
         let rows = CGFloat((count - 1) / 3 + 1 )
         let picViewH = rows * imageViewWH + (rows - 1) * itemMargin
         let picViewW = kScreenW - 2 * edgeMargin

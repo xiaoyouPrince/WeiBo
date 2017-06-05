@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController: BaseViewController {
     
@@ -115,9 +116,38 @@ extension HomeViewController{
                 self.statusViewModels.append(StatusViewModel(status: status))
             }
     
-            self.tableView.reloadData()
+            // 加载完数据进行图片数据的缓存，
+            
+            self.cacheImage(viewModels: self.statusViewModels)
+            
         }
         
+    }
+    
+    fileprivate func cacheImage(viewModels : [StatusViewModel]){
+        
+        // 异步下载图片之后，再进行刷新表格，通过组来完成
+        let group = DispatchGroup.init()
+
+        
+        
+        for viewModel in viewModels {
+            for url in viewModel.picURLs {
+                
+                group.enter()
+                SDWebImageManager.shared().loadImage(with: url, options: [], progress: nil, completed: { (_, _, _, _, _, _) in
+
+                    Dlog("图片下载完")
+                    group.leave()
+                })
+            }
+        }
+
+        group.notify(queue: DispatchQueue.main) {
+            
+            self.tableView.reloadData()
+            Dlog("刷新数据")
+        }
     }
     
 }

@@ -145,7 +145,7 @@
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-WU-zBX" customClass="PicCollectionView" customModule="WeiBo" customModuleProvider="target">
                                             <rect key="frame" x="15" y="108" width="235" height="104"/>
-                                            <color key="backgroundColor" red="0.047743055555555552" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="104" id="2P8-Gd-c4k"/>
                                                 <constraint firstAttribute="width" constant="235" id="hWM-Vn-RZH"/>
@@ -182,6 +182,7 @@
                                             </cells>
                                         </collectionView>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="NKL-Aw-RNu" firstAttribute="top" secondItem="YXk-hi-ss5" secondAttribute="top" constant="15" id="6BN-1s-UcH"/>
                                         <constraint firstItem="oRA-mV-9aX" firstAttribute="leading" secondItem="Jmq-rQ-y6h" secondAttribute="leading" id="B9G-gP-QeN"/>
