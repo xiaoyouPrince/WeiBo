@@ -75,18 +75,18 @@
 【计划】：实现微博首页微博展示和主页功能 <br>
 【实现步骤】：<br>
 
-1. 集成CocoaPods,导入Alamofire，SDWebImage等常用三方框架
-2. 封装一个自己的网络层工具，和Alamofire进行分层
-3. 新浪Oauth授权的分析和授权页面的布局（XIB）
-4. 加载登录页面，执行JS代码自动填充账号密码。
-5. 获取Oauth授权code并通过code请求到accessToken
-6. 封装一个UserAccount类封装对应的授权信息，并处理过期时间（秒数转成日期）
-7. 通过accesstoken请求用户信息，归档和解档 account 对象
-8. 封装UserAccountViewModel，更方便的管理用户信息
-9. 布局欢迎界面，并处理欢迎界面的逻辑
+1. 请求微博首页数据，进行字典转模型保存
+2. 处理微博时间、来源 和 用户（会员，认证）等数据
+3. 微博数据视图模型的封装，更方便管理对应的微博数据
+4. 布局首页微博cell，并给cell设置基本数据
+5. 布局微博cell的底部工具栏
+6. 添加配图View，展示并缓存单张配图。
+7. 添加转发微博，调整约束并计算cell的高度
+8. 集成下拉刷新和上拉加载更多
+9. 添加提示更新微博数目的Label
 
 【当前效果】：<br>
-![5.23](http://oozx6yayl.bkt.clouddn.com/5.23WeiBo.gif)
+![5.25](http://oozx6yayl.bkt.clouddn.com/5.25WeiBo.gif)
 
 
 ## 主要页面效果如图
