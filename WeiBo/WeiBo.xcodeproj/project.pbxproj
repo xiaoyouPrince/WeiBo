@@ -12,6 +12,7 @@
 		B4030E1F1ED680ED00E48DE9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */; };
 		B4030E201ED680ED00E48DE9 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */; };
 		B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */; };
+		B41D0C701EE5093700F2282A /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D0C6F1EE5093700F2282A /* PicCollectionView.swift */; };
 		B447F47E1ED73DF7005DBAB0 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447F47D1ED73DF7005DBAB0 /* URL.swift */; };
 		B447F4811ED742E3005DBAB0 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447F4801ED742E3005DBAB0 /* Status.swift */; };
 		B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */; };
@@ -75,6 +76,7 @@
 		B4030E1D1ED680ED00E48DE9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B4030E1E1ED680ED00E48DE9 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		B415906E1ECFF0710006C9E7 /* XYPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYPresentationController.swift; sourceTree = "<group>"; };
+		B41D0C6F1EE5093700F2282A /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		B447F47D1ED73DF7005DBAB0 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		B447F4801ED742E3005DBAB0 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B44DDDB41ECF2F64002AF0AD /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				B4C9788B1ECEC4CF001D640E /* Home.storyboard */,
 				B4C978801ECE8AEB001D640E /* HomeViewController.swift */,
 				B4F0F7141ED972A9009298EA /* HomeViewCell.swift */,
+				B41D0C6F1EE5093700F2282A /* PicCollectionView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
+				B41D0C701EE5093700F2282A /* PicCollectionView.swift in Sources */,
 				B4C978851ECE8B09001D640E /* DiscoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

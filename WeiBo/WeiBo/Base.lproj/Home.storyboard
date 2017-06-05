@@ -143,7 +143,7 @@
                                                 <constraint firstItem="Zlg-40-iaE" firstAttribute="top" secondItem="Dc1-sZ-pl5" secondAttribute="top" id="yZh-wF-SSF"/>
                                             </constraints>
                                         </view>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-WU-zBX">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-WU-zBX" customClass="PicCollectionView" customModule="WeiBo" customModuleProvider="target">
                                             <rect key="frame" x="15" y="108" width="235" height="104"/>
                                             <color key="backgroundColor" red="0.047743055555555552" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -157,13 +157,27 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="T1u-om-UDY">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="T1u-om-UDY" customClass="PicCollectionViewCell" customModule="WeiBo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-ZJ-CWd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
                                                     </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="o0L-ZJ-CWd" secondAttribute="trailing" id="1Im-g2-W63"/>
+                                                        <constraint firstAttribute="bottom" secondItem="o0L-ZJ-CWd" secondAttribute="bottom" id="a1R-uP-w3H"/>
+                                                        <constraint firstItem="o0L-ZJ-CWd" firstAttribute="top" secondItem="T1u-om-UDY" secondAttribute="top" id="cbD-Zs-i3c"/>
+                                                        <constraint firstItem="o0L-ZJ-CWd" firstAttribute="leading" secondItem="T1u-om-UDY" secondAttribute="leading" id="vd2-QZ-dcr"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconImageView" destination="o0L-ZJ-CWd" id="rGO-gm-zVg"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -196,7 +210,9 @@
                                     <outlet property="contentLabelWidthConstraint" destination="Lpc-XA-fnF" id="B0Q-NW-aHG"/>
                                     <outlet property="creatAtLabel" destination="oRA-mV-9aX" id="4gA-xi-tHP"/>
                                     <outlet property="iconImage" destination="NKL-Aw-RNu" id="Stw-0a-eGb"/>
+                                    <outlet property="picVIewWcons" destination="hWM-Vn-RZH" id="E57-n8-tSf"/>
                                     <outlet property="picView" destination="4wT-WU-zBX" id="VMR-eH-nQn"/>
+                                    <outlet property="picViewHcons" destination="2P8-Gd-c4k" id="Gwf-HV-PeN"/>
                                     <outlet property="sourceLabel" destination="xBu-pI-iei" id="CDI-XC-vqI"/>
                                     <outlet property="userNameLabel" destination="Jmq-rQ-y6h" id="ubz-av-zPj"/>
                                     <outlet property="vertifyIcon" destination="9zU-VA-M2J" id="bhC-wb-Y0W"/>

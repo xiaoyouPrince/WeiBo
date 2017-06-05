@@ -18,13 +18,13 @@ class StatusViewModel: NSObject {
     var verifiedImage : UIImage?   /// 用户认证图片
     var vipImage : UIImage?        /// 用户会员等级图片
     var profileURL : URL?          /// 用户头像的处理
-    var picURLs : [URL]?           /// 微博配图的处理
+    var picURLs : [URL] = [URL]()  /// 微博配图的处理
     
     
     init( status : Status ){
         
         self.status = status
-
+        
         // 1.处理微博来源
         if let source = status.source , status.source != "" {
             
@@ -76,10 +76,10 @@ class StatusViewModel: NSObject {
                 guard let picUrlString = picurlDict["thumbnail_pic"] else {
                     continue
                 }
-                picURLs?.append(URL(string : picUrlString)!)
+                
+                self.picURLs.append(URL(string : picUrlString)!)
                 
             }
         }
-        
     }
 }
