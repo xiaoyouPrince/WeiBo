@@ -34,6 +34,12 @@ class HomeViewCell: UITableViewCell {
                 picViewHcons.constant = self.calculatePicViewSize(count: (statusVM?.picURLs.count ?? 0)! ).height
                 picVIewWcons.constant = self.calculatePicViewSize(count: (statusVM?.picURLs.count ?? 0)! ).width
                 picView.picUrls = (statusVM?.picURLs)!
+                // 设置转发微博的内容
+                if let retweetText = statusVM?.status.retweeted_status?.text {
+                    retweetContentLabel.text = retweetText
+                }else{
+                    retweetContentLabel.text = nil
+                }
             }
         }
     }
@@ -63,6 +69,8 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     /// 微博图片内容
     @IBOutlet weak var picView: PicCollectionView!
+    /// 转发微博内容
+    @IBOutlet weak var retweetContentLabel: UILabel!
 
     
     // MARK: - 系统回调
