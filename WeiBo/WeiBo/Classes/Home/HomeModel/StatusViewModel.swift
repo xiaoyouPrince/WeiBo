@@ -12,7 +12,9 @@ import UIKit
 class StatusViewModel: NSObject {
     
     var status : Status
-
+    
+    var cellHeight : CGFloat = 0   /// cell 高度
+    
     var sourceText : String?       /// 微博正文，经过处理后直接使用
     var creatTimeStr : String?     /// 微博正文，经过处理后直接使用
     var verifiedImage : UIImage?   /// 用户认证图片

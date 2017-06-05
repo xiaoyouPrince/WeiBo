@@ -79,11 +79,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBg-pc-4WM" userLabel="转发微博背景">
-                                            <rect key="frame" x="0.0" y="89" width="375" height="133"/>
+                                            <rect key="frame" x="0.0" y="89" width="375" height="103"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaE-RI-5aV" userLabel="工具栏">
-                                            <rect key="frame" x="0.0" y="222" width="375" height="32"/>
+                                            <rect key="frame" x="0.0" y="192" width="375" height="32"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dc1-sZ-pl5">
                                                     <rect key="frame" x="0.0" y="1" width="125" height="26"/>
@@ -148,7 +148,7 @@
                                             </constraints>
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-WU-zBX" customClass="PicCollectionView" customModule="WeiBo" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="152" width="235" height="60"/>
+                                            <rect key="frame" x="15" y="122" width="235" height="60"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="2P8-Gd-c4k"/>
@@ -168,7 +168,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-ZJ-CWd">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-ZJ-CWd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             </imageView>
                                                         </subviews>
@@ -185,8 +185,8 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igh-Xm-xBk">
-                                            <rect key="frame" x="15" y="96" width="120" height="46"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igh-Xm-xBk">
+                                            <rect key="frame" x="15" y="96" width="120" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -207,7 +207,6 @@
                                         <constraint firstItem="MaE-RI-5aV" firstAttribute="top" secondItem="4wT-WU-zBX" secondAttribute="bottom" priority="700" constant="10" id="Tpl-VL-7DI"/>
                                         <constraint firstItem="HPq-V9-Y8R" firstAttribute="centerY" secondItem="Jmq-rQ-y6h" secondAttribute="centerY" id="V8D-J3-aco"/>
                                         <constraint firstItem="Jmq-rQ-y6h" firstAttribute="leading" secondItem="NKL-Aw-RNu" secondAttribute="trailing" constant="15" id="W83-aR-51O"/>
-                                        <constraint firstAttribute="bottom" secondItem="MaE-RI-5aV" secondAttribute="bottom" id="X4h-7H-3BP"/>
                                         <constraint firstItem="rBg-pc-4WM" firstAttribute="leading" secondItem="YXk-hi-ss5" secondAttribute="leading" id="bwz-Bh-N2g"/>
                                         <constraint firstItem="xBu-pI-iei" firstAttribute="bottom" secondItem="oRA-mV-9aX" secondAttribute="bottom" id="c6R-Na-hAe"/>
                                         <constraint firstItem="HPq-V9-Y8R" firstAttribute="leading" secondItem="Jmq-rQ-y6h" secondAttribute="trailing" constant="10" id="dAU-rd-StB"/>
@@ -224,6 +223,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bottomToolBar" destination="MaE-RI-5aV" id="zud-bw-ALz"/>
                                     <outlet property="contentLabel" destination="ylK-Rf-HXY" id="jW3-l8-vbN"/>
                                     <outlet property="contentLabelWidthConstraint" destination="Lpc-XA-fnF" id="B0Q-NW-aHG"/>
                                     <outlet property="creatAtLabel" destination="oRA-mV-9aX" id="4gA-xi-tHP"/>

@@ -52,6 +52,17 @@ class HomeViewCell: UITableViewCell {
                     // 设置转发正文的约束
                     retweetContentBottomCons.constant = 0
                 }
+                
+                // 手动计算cell高度
+                if viewModel.cellHeight == 0 {
+                    
+                    // 1.强制布局
+                    self.layoutIfNeeded()
+                    
+                    // 2.计算并保存cell高度
+                    viewModel.cellHeight = self.bottomToolBar.frame.maxY
+                }
+                
             }
         }
     }
@@ -87,6 +98,8 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var retweetContentLabel: UILabel!
     /// 转发微博背景
     @IBOutlet weak var retweetStatusBGView: UIView!
+    /// 底部工具栏
+    @IBOutlet weak var bottomToolBar: UIView!
 
     
     // MARK: - 系统回调
