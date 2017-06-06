@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseViewController {
     
@@ -19,13 +20,8 @@ class HomeViewController: BaseViewController {
     
     var statusViewModels : [StatusViewModel] = [StatusViewModel]()
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        isLogin = true
         
         // 未登录时候的页面
         visitorView.addRotationAnim()
@@ -37,20 +33,20 @@ class HomeViewController: BaseViewController {
         setupNavigationBar()
         
         
-        // 请求数据
+//        // 请求数据
         loadData()
         
-        /// 设置估算tableView的高度
-        // tableView.rowHeight = UITableViewAutomaticDimension
         // 自己计算cell高度
         tableView.estimatedRowHeight = 200
         
+        // 添加自动刷新header、footer
+        addRefreshComponent()
+    
     }
 }
 
 
 // MARK: - 创建UI
-
 extension HomeViewController{
     
     /// buildUI
@@ -77,7 +73,6 @@ extension HomeViewController{
 
 
 // MARK: - 监听事件监听
-
 extension HomeViewController{
     
     
@@ -101,8 +96,24 @@ extension HomeViewController{
     
 }
 
-
+// MARK: - 加载数据
 extension HomeViewController{
+    
+    
+    /// 添加上拉加载和下拉刷新功能
+    func addRefreshComponent() {
+        
+        // 下拉刷新
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            // 请求数据
+            self.loadData()
+            
+            self.tableView.mj_header.endRefreshing()
+        })
+        self.tableView.mj_header.beginRefreshing()
+        
+    }
+    
     
     func loadData() {
         
