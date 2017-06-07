@@ -13,7 +13,7 @@ class Status: NSObject {
     var created_at : String?                /// 微博创建时间
     var text : String?                      /// 微博正文
     var source : String?                    /// 微博来源
-    var id : Int = 0                        /// 微博ID
+    var mid : Int = 0                       /// 微博ID
     var user : User?                        /// 用户类型
     var pic_urls : [[String : String]]?     /// 微博配图
     var retweeted_status : Status?           /// 转发微博

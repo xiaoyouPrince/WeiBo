@@ -34,7 +34,7 @@ class HomeViewController: BaseViewController {
         
         
 //        // 请求数据
-        loadData()
+//        loadData()
         
         // 自己计算cell高度
         tableView.estimatedRowHeight = 200
@@ -103,29 +103,49 @@ extension HomeViewController{
     /// 添加上拉加载和下拉刷新功能
     func addRefreshComponent() {
         
-        // 下拉刷新
+        // 1.下拉刷新数据
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             // 请求数据
-            self.loadData()
+            self.loadData(true)
             
             self.tableView.mj_header.endRefreshing()
         })
+        
+//        // 2.上拉加载原来数据
+//        self.tableView.mj_footer = MJRefreshBackFooter(refreshingBlock: { 
+//            self.tableView.mj_footer.endRefreshing()
+//
+//        })
+        // 3.每次进来直接进行下拉刷新操作
         self.tableView.mj_header.beginRefreshing()
         
     }
     
     
-    func loadData() {
+    func loadData(_ isNewData : Bool) {
         
-        NetworkTools.loadHomeData { (result) in
+        
+        // 获取since_id
+        var since_id = 0
+        
+        if isNewData {
+            
+            since_id = self.statusViewModels.first?.status.mid ?? 0
+        }
+        
+        NetworkTools.loadHomeData("\(since_id)") { (result) in
             
             guard let statusArray = result else{return}
+            
+            var tempViewModels = [StatusViewModel]()
             
             for dict in statusArray{
                 
                 let status = Status(dict : dict)
                 
                 self.statusViewModels.append(StatusViewModel(status: status))
+                
+                tempViewModels.append(<#T##newElement: StatusViewModel##StatusViewModel#>)
             }
     
             // 加载完数据进行图片数据的缓存，
