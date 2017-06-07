@@ -143,10 +143,12 @@ extension HomeViewController{
                 
                 let status = Status(dict : dict)
                 
-                self.statusViewModels.append(StatusViewModel(status: status))
+//                self.statusViewModels.append(StatusViewModel(status: status))
                 
-                tempViewModels.append(<#T##newElement: StatusViewModel##StatusViewModel#>)
+                tempViewModels.append(StatusViewModel(status: status))
             }
+            
+            self.statusViewModels = tempViewModels + self.statusViewModels
     
             // 加载完数据进行图片数据的缓存，
             
