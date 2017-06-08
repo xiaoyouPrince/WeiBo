@@ -11,8 +11,10 @@ import UIKit
 
 extension UIBarButtonItem
 {
-    
-    /// 创建一个便利构造函数，通过一个image快速生成
+        
+    /// 创建一个便利构造函数
+    ///
+    /// - Parameter imageName: 通过一个image快速生成
     convenience init(imageName : String) {
         
         let btn = UIButton()

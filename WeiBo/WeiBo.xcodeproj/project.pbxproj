@@ -24,6 +24,7 @@
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
 		B49C0D511ED833B700B220E6 /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C0D501ED833B700B220E6 /* Date-Extension.swift */; };
+		B4A974111EE991B9003558B8 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A974101EE991B9003558B8 /* ComposeTextView.swift */; };
 		B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC063E1ED5236A0030E68E /* NetworkTools.swift */; };
 		B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC06411ED528330030E68E /* OAuthViewController.swift */; };
 		B4BC06441ED528330030E68E /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4BC06421ED528330030E68E /* OAuthViewController.xib */; };
@@ -49,6 +50,7 @@
 		B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */; };
 		B4DD9C971EE93B1300BD25F5 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD9C951EE93B1300BD25F5 /* ComposeViewController.swift */; };
 		B4DD9C981EE93B1300BD25F5 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DD9C961EE93B1300BD25F5 /* ComposeViewController.xib */; };
+		B4DD9C9A1EE9564800BD25F5 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD9C991EE9564800BD25F5 /* ComposeTitleView.swift */; };
 		B4F0F70F1ED91ECA009298EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F70E1ED91ECA009298EA /* User.swift */; };
 		B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7101ED93040009298EA /* StatusViewModel.swift */; };
 		B4F0F7151ED972A9009298EA /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7141ED972A9009298EA /* HomeViewCell.swift */; };
@@ -96,6 +98,7 @@
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B49C0D501ED833B700B220E6 /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
+		B4A974101EE991B9003558B8 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		B4BC063E1ED5236A0030E68E /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		B4BC06411ED528330030E68E /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		B4BC06421ED528330030E68E /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		B4DD9C951EE93B1300BD25F5 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		B4DD9C961EE93B1300BD25F5 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		B4DD9C991EE9564800BD25F5 /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
 		B4F0F70E1ED91ECA009298EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4F0F7101ED93040009298EA /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		B4F0F7141ED972A9009298EA /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 			children = (
 				B4DD9C951EE93B1300BD25F5 /* ComposeViewController.swift */,
 				B4DD9C961EE93B1300BD25F5 /* ComposeViewController.xib */,
+				B4DD9C991EE9564800BD25F5 /* ComposeTitleView.swift */,
+				B4A974101EE991B9003558B8 /* ComposeTextView.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -613,9 +619,11 @@
 				B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */,
 				B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */,
 				B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */,
+				B4A974111EE991B9003558B8 /* ComposeTextView.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
 				B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */,
 				B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */,
+				B4DD9C9A1EE9564800BD25F5 /* ComposeTitleView.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
 				B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */,
 				B4030E1B1ED6726A00E48DE9 /* UserAccountViewModel.swift in Sources */,
