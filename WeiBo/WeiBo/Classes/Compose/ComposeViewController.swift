@@ -11,15 +11,30 @@ import UIKit
 class ComposeViewController: UIViewController {
     
     // MARK: - 属性
-    @IBOutlet weak var textField: ComposeTextView!
+    @IBOutlet weak var textView: ComposeTextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNav()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textView.delegate = self
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        textView.resignFirstResponder()
+    }
+    
 }
 
+
+// MARK: - 设置UI
 extension ComposeViewController{
     
     
@@ -34,6 +49,12 @@ extension ComposeViewController{
         
     }
     
+   
+}
+
+
+// MARK: - 事件监听
+extension ComposeViewController{
     
     @objc fileprivate func cancelItemClick(){
         self.dismiss(animated: true, completion: nil)
@@ -43,6 +64,21 @@ extension ComposeViewController{
         
     }
     
+}
+
+
+
+// MARK: - textView 的代理方法
+extension ComposeViewController : UITextViewDelegate{
     
+    func textViewDidChange(_ textView: UITextView) {
+
+        self.textView.label.isHidden = textView.hasText
+        navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
+    }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        textView.resignFirstResponder()
+    }
 }

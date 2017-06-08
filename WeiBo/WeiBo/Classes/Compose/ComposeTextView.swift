@@ -12,7 +12,7 @@ import SnapKit
 class ComposeTextView: UITextView {
     
     // MARK: - 属性
-    fileprivate lazy var label : UILabel = UILabel()  /// 站位label
+    lazy var label : UILabel = UILabel()  /// 站位label
 
 
     required init?(coder aDecoder: NSCoder) {
@@ -23,7 +23,7 @@ class ComposeTextView: UITextView {
         super.awakeFromNib()
         
         setupPlaceholder("分享新鲜事...")
-        
+        self.alwaysBounceVertical = true
         textContainerInset = UIEdgeInsets(top: 8, left: 7, bottom: 0, right: 7)
         
     }
