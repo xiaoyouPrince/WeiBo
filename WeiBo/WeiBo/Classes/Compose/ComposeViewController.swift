@@ -12,15 +12,23 @@ class ComposeViewController: UIViewController {
     
     // MARK: - 属性
     @IBOutlet weak var textView: ComposeTextView!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
 
+    
+    // MARK: - 系统调用
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNav()
+        
+        addNotification()
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         textView.delegate = self
         textView.becomeFirstResponder()
@@ -30,6 +38,10 @@ class ComposeViewController: UIViewController {
         super.viewWillDisappear(animated)
         textView.resignFirstResponder()
     }
+    
+    
+    
+    
     
 }
 
@@ -56,11 +68,35 @@ extension ComposeViewController{
 // MARK: - 事件监听
 extension ComposeViewController{
     
+    
+    /// 取消 item 点击
     @objc fileprivate func cancelItemClick(){
         self.dismiss(animated: true, completion: nil)
     }
     
+    /// 发送 item 点击
     @objc fileprivate func commitItemClick(){
+        
+    }
+    
+    
+    /// 设置通知中心监听
+    fileprivate func addNotification(){
+        
+        // 1.监听键盘弹出和收回
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidChangeFrame(noti:)), name: .UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    @objc fileprivate func keyboardDidChangeFrame(noti : Notification){
+        
+        let duration = noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        
+        let endFrame = (noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        toolBarBottomCons.constant = kScreenH - endFrame.origin.y
+        UIView.animate(withDuration: duration) { 
+            self.view.layoutIfNeeded()
+        }
         
     }
     
