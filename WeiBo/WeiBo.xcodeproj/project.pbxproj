@@ -47,6 +47,8 @@
 		B4D3EA981ECFD3C3004D554B /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3EA971ECFD3C3004D554B /* TitleButton.swift */; };
 		B4D6F9FF1ECFE60000DA609F /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */; };
 		B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */; };
+		B4DD9C971EE93B1300BD25F5 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD9C951EE93B1300BD25F5 /* ComposeViewController.swift */; };
+		B4DD9C981EE93B1300BD25F5 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DD9C961EE93B1300BD25F5 /* ComposeViewController.xib */; };
 		B4F0F70F1ED91ECA009298EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F70E1ED91ECA009298EA /* User.swift */; };
 		B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7101ED93040009298EA /* StatusViewModel.swift */; };
 		B4F0F7151ED972A9009298EA /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7141ED972A9009298EA /* HomeViewCell.swift */; };
@@ -117,6 +119,8 @@
 		B4D3EA971ECFD3C3004D554B /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		B4D6F9FD1ECFE60000DA609F /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		B4D6F9FE1ECFE60000DA609F /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		B4DD9C951EE93B1300BD25F5 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		B4DD9C961EE93B1300BD25F5 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		B4F0F70E1ED91ECA009298EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4F0F7101ED93040009298EA /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		B4F0F7141ED972A9009298EA /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				B401706C1ECE045400185F20 /* Main */,
 				B401706B1ECE045400185F20 /* Home */,
 				B401706D1ECE045400185F20 /* Message */,
+				B4DD9C941EE93AEE00BD25F5 /* Compose */,
 				B401706A1ECE045400185F20 /* Discover */,
 				B401706E1ECE045400185F20 /* Profile */,
 				B4C978981ECEEBD3001D640E /* Tools */,
@@ -390,6 +395,15 @@
 			path = UIPopover;
 			sourceTree = "<group>";
 		};
+		B4DD9C941EE93AEE00BD25F5 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				B4DD9C951EE93B1300BD25F5 /* ComposeViewController.swift */,
+				B4DD9C961EE93B1300BD25F5 /* ComposeViewController.xib */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +528,7 @@
 				B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */,
 				B4C978971ECEC9EB001D640E /* Null.storyboard in Resources */,
 				B4C9788F1ECEC4E2001D640E /* Message.storyboard in Resources */,
+				B4DD9C981EE93B1300BD25F5 /* ComposeViewController.xib in Resources */,
 				B4C978921ECEC4F5001D640E /* Discover.storyboard in Resources */,
 				B45664BF1ECDF70C00BAD01F /* Main.storyboard in Resources */,
 			);
@@ -615,6 +630,7 @@
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
 				B41D0C701EE5093700F2282A /* PicCollectionView.swift in Sources */,
 				B4C978851ECE8B09001D640E /* DiscoverViewController.swift in Sources */,
+				B4DD9C971EE93B1300BD25F5 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
