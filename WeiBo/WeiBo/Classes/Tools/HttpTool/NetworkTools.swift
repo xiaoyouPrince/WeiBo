@@ -27,6 +27,7 @@ class NetworkTools {
         
         Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
             
+       
             // 1.校验返回值
             guard let result = response.result.value else{
                 
@@ -110,11 +111,23 @@ extension NetworkTools{
                 return
             }
             
-            guard let statusesArray = result["statuses"] as? [[String : AnyObject]] else {
-                return
+            // 判断请求是否出错
+            if (result["error_code"]) != nil{
+                
+                finishCallBack(result as? [[String : AnyObject]])
+                
+            }else{
+                
+                // 为出错
+                guard let statusesArray = result["statuses"] as? [[String : AnyObject]] else {
+                    return
+                }
+                
+                finishCallBack(statusesArray)
             }
+
             
-            finishCallBack(statusesArray)
+            
 
         }
         

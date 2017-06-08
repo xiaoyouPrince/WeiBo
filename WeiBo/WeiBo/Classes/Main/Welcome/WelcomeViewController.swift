@@ -26,7 +26,7 @@ class WelcomeViewController: UIViewController {
 //        iconView.kf.setImage(with : UserAccountViewModel.shareInstance.account?.avatar_large as? Resource , placeholder: UIImage(named : "avatar_default"), options: nil, progressBlock: nil, completionHandler: nil)
         
         // 弃用KingFisher ，使用SDWebImage
-        iconView.sd_setImage(with: URL(string: (UserAccountViewModel.shareInstance.account?.avatar_large)!), placeholderImage: UIImage(named : "avatar_default"))
+        iconView.sd_setImage(with: URL(string: (UserAccountViewModel.shareInstance.account?.avatar_large) ?? ""), placeholderImage: UIImage(named : "avatar_default"))
 
     }
     

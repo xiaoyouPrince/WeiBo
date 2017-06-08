@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import MJRefresh
+import SVProgressHUD
 
 class HomeViewController: BaseViewController {
     
@@ -130,7 +131,6 @@ extension HomeViewController{
             label.font = UIFont.boldSystemFont(ofSize: 13)
             self.tableView.mj_footer.addSubview(label)
 
-            print(label)
             // 请求数据
             self.loadData(false)
         })
@@ -160,7 +160,16 @@ extension HomeViewController{
         
         NetworkTools.loadHomeData(since_id, max_id: max_id) { (result) in
             
-            guard let statusArray = result else{return}
+            guard let statusArray = result else{
+                
+                // 这块说明没有值，请求超限
+                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_header.endRefreshing()
+                
+                SVProgressHUD.showError(withStatus: "请求超限制次数")
+                
+                return
+            }
             
             var tempViewModels = [StatusViewModel]()
             
