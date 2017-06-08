@@ -14,11 +14,23 @@ class HomeViewController: BaseViewController {
     
     // MARK: - 懒加载属性
     fileprivate lazy var titleBtn : TitleButton = TitleButton()
+    fileprivate lazy var tipLabel : UILabel = { [unowned self] in
+        
+        var tipLabel = UILabel()
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.textAlignment = NSTextAlignment.center
+        tipLabel.frame = CGRect(x: 10, y: 10, width: kScreenW - 20, height: 34)
+        tipLabel.layer.cornerRadius = 5
+        tipLabel.clipsToBounds = true
+        tipLabel.isHidden = true
+        return tipLabel
+    }()
     fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[unowned self] (dismissFinished) in
         self.titleBtn.isSelected = dismissFinished
     }
-    
     var statusViewModels : [StatusViewModel] = [StatusViewModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +44,12 @@ class HomeViewController: BaseViewController {
         // 登录之后的页面
         setupNavigationBar()
         
-        
-//        // 请求数据
-//        loadData()
-        
         // 自己计算cell高度
         tableView.estimatedRowHeight = 200
         
         // 添加自动刷新header、footer
         addRefreshComponent()
+        
     
     }
 }
@@ -108,32 +117,48 @@ extension HomeViewController{
             // 请求数据
             self.loadData(true)
             
-            self.tableView.mj_header.endRefreshing()
         })
         
-//        // 2.上拉加载原来数据
-//        self.tableView.mj_footer = MJRefreshBackFooter(refreshingBlock: { 
-//            self.tableView.mj_footer.endRefreshing()
-//
-//        })
+        // 2.上拉加载原来数据
+        self.tableView.mj_footer = MJRefreshAutoFooter(refreshingBlock: {
+            
+            let label = UILabel(frame: CGRect(x: 10, y: 10, width: kScreenW - 20, height: 30))
+            label.backgroundColor = UIColor.clear
+            label.text = "正在加载更多数据..."
+            label.textColor = UIColor.gray
+            label.textAlignment = NSTextAlignment.center
+            label.font = UIFont.boldSystemFont(ofSize: 13)
+            self.tableView.mj_footer.addSubview(label)
+
+            print(label)
+            // 请求数据
+            self.loadData(false)
+        })
+        
+        
         // 3.每次进来直接进行下拉刷新操作
         self.tableView.mj_header.beginRefreshing()
         
     }
     
     
+    /// 加载数据
+    ///
+    /// - Parameter isNewData: 是否加载新数据
     func loadData(_ isNewData : Bool) {
         
-        
-        // 获取since_id
+        // 获取since_id / max_id
         var since_id = 0
+        var max_id = 0
         
         if isNewData {
-            
             since_id = self.statusViewModels.first?.status.mid ?? 0
+        }else{
+            max_id = self.statusViewModels.last?.status.mid ?? 0
+            max_id = max_id == 0 ? 0 : max_id - 1
         }
         
-        NetworkTools.loadHomeData("\(since_id)") { (result) in
+        NetworkTools.loadHomeData(since_id, max_id: max_id) { (result) in
             
             guard let statusArray = result else{return}
             
@@ -143,22 +168,28 @@ extension HomeViewController{
                 
                 let status = Status(dict : dict)
                 
-//                self.statusViewModels.append(StatusViewModel(status: status))
-                
                 tempViewModels.append(StatusViewModel(status: status))
             }
             
-            self.statusViewModels = tempViewModels + self.statusViewModels
-    
-            // 加载完数据进行图片数据的缓存，
-            
-            self.cacheImage(viewModels: self.statusViewModels)
-            
+            if isNewData{
+                self.statusViewModels = tempViewModels + self.statusViewModels
+                
+                // 加载完数据进行图片数据的缓存，
+                self.cacheImage(isNewData: true , count: tempViewModels.count,viewModels: self.statusViewModels)
+
+            }else{
+                self.statusViewModels += tempViewModels
+                
+                // 加载完数据进行图片数据的缓存，
+                self.cacheImage(isNewData: false , count: tempViewModels.count,viewModels: self.statusViewModels)
+
+            }
+
         }
         
     }
     
-    fileprivate func cacheImage(viewModels : [StatusViewModel]){
+    fileprivate func cacheImage(isNewData : Bool ,count : Int ,  viewModels : [StatusViewModel]){
         
         // 异步下载图片之后，再进行刷新表格，通过组来完成
         let group = DispatchGroup.init()
@@ -180,8 +211,50 @@ extension HomeViewController{
         group.notify(queue: DispatchQueue.main) {
             
             self.tableView.reloadData()
+            
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            
             Dlog("刷新数据")
+            
+            if isNewData{
+                
+                self.showTipLabel(count: count)
+            }
         }
+    }
+    
+    
+    fileprivate func showTipLabel(count : Int){
+        
+        // 展示tipLabel
+        if count == 0{
+            self.tipLabel.text = "无最新微博"
+        }else{
+            self.tipLabel.text = "更新\(count)条数据"
+        }
+        
+        self.tipLabel.isHidden = false
+        let bgview = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 44))
+        bgview.backgroundColor = UIColor.white
+        navigationController?.navigationBar.insertSubview(bgview, at: 0)
+        navigationController?.navigationBar.insertSubview(self.tipLabel, at: 0)
+        
+        UIView.animate(withDuration: 1.5, animations: {
+            
+            // 慢慢展示
+            self.tipLabel.transform = CGAffineTransform(translationX: 0, y: 44)
+            
+        }, completion: { (_) in
+            
+            // 慢慢消失
+            UIView.animate(withDuration: 1.5, delay: 1.0, options: [], animations: {
+                self.tipLabel.transform = CGAffineTransform.identity
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+            })
+        })
+
     }
     
 }
@@ -213,6 +286,5 @@ extension HomeViewController{
     }
     
 }
-
 
 
