@@ -6,14 +6,24 @@
 //  Copyright © 2017年 xiaoyouPrince. All rights reserved.
 //
 
+private let picPickerAddPhotoNote = NSNotification.Name(rawValue: "picPickerAddPhotoNote")
+private let picPickerDeletePhotoNote = NSNotification.Name(rawValue: "picPickerDeletePhotoNote")
+
+
 import UIKit
 
 class ComposeViewController: UIViewController {
     
-    // MARK: - 属性
+    // MARK: - 懒加载属性
+    fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView(frame: CGRect(x: 0, y: 0, width: kScreenW / 2, height: 40))
+    
+    // MARK: - 控件属性
     @IBOutlet weak var textView: ComposeTextView!
     @IBOutlet weak var toolBar: UIToolbar!
+    
+    // MARK: - 约束
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var picPickerViewHCons: NSLayoutConstraint!
 
     
     // MARK: - 系统调用
@@ -41,6 +51,10 @@ class ComposeViewController: UIViewController {
     
     
     
+    // 移除监听
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     
 }
@@ -57,7 +71,7 @@ extension ComposeViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发布", style: .plain, target: self, action: #selector(commitItemClick))
         navigationItem.rightBarButtonItem?.isEnabled = false
 
-        navigationItem.titleView = ComposeTitleView(frame: CGRect(x: 0, y: 0, width: kScreenW / 2, height: 40))
+        navigationItem.titleView = titleView
         
     }
     
@@ -80,13 +94,38 @@ extension ComposeViewController{
     }
     
     
+    /// 添加图片按钮点击
+    ///
+    /// - Parameter sender: 对应按钮
+    @IBAction func picPickerBtnClick(_ sender: Any) {
+        
+        textView.resignFirstResponder()
+        
+        picPickerViewHCons.constant = kScreenH * 0.65
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    
     /// 设置通知中心监听
     fileprivate func addNotification(){
         
         // 1.监听键盘弹出和收回
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidChangeFrame(noti:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        
+        // 2.监听相册按钮
+//        NotificationCenter.default.addObserver(self, selector: #selector(picPickerAddPhoto), name:picPickerAddPhotoNote, object: nil)
+        
     }
     
+    
+    
+    
+    /// 键盘弹出方法
+    ///
+    /// - Parameter noti: 通知
     @objc fileprivate func keyboardDidChangeFrame(noti : Notification){
         
         let duration = noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
@@ -97,6 +136,14 @@ extension ComposeViewController{
         UIView.animate(withDuration: duration) { 
             self.view.layoutIfNeeded()
         }
+        
+    }
+    
+    @objc fileprivate func picPickerAddPhoto(){
+        
+        print("sdfsdfsdfsdfsdfs")
+        
+        //  当前状体，需要做点击图片按钮的效果了
         
     }
     
@@ -116,5 +163,11 @@ extension ComposeViewController : UITextViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         textView.resignFirstResponder()
+        
+        // 隐藏picPickerView
+        picPickerViewHCons.constant = 0
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
     }
 }

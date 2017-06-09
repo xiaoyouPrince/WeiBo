@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="WeiBo" customModuleProvider="target">
             <connections>
+                <outlet property="picPickerViewHCons" destination="iDQ-S9-aEF" id="ULO-Rf-FzW"/>
                 <outlet property="textView" destination="7jI-4z-qdL" id="Luj-5l-TEl"/>
                 <outlet property="toolBar" destination="a06-ur-rdv" id="XIB-Gp-KQ1"/>
                 <outlet property="toolBarBottomCons" destination="mdL-NJ-Qq6" id="7ET-pR-Zwc"/>
@@ -27,6 +28,19 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ceJ-VM-DRl" customClass="PicPickerView" customModule="WeiBo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="iDQ-S9-aEF"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YFT-RD-lUV">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a06-ur-rdv">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <constraints>
@@ -39,6 +53,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_toolbar_picture"/>
                                 <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
+                                <connections>
+                                    <action selector="picPickerBtnClick:" destination="-1" eventType="touchUpInside" id="0oi-Dj-wpr"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="E68-Sb-sZs"/>
@@ -85,9 +102,12 @@
                 <constraint firstAttribute="bottom" secondItem="7jI-4z-qdL" secondAttribute="bottom" id="0qn-Ff-8pN"/>
                 <constraint firstItem="7jI-4z-qdL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ap0-Dv-zqH"/>
                 <constraint firstAttribute="trailing" secondItem="7jI-4z-qdL" secondAttribute="trailing" id="G8x-rQ-xHU"/>
+                <constraint firstItem="ceJ-VM-DRl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aUb-EY-ZAE"/>
+                <constraint firstAttribute="trailing" secondItem="ceJ-VM-DRl" secondAttribute="trailing" id="bYO-kx-50j"/>
                 <constraint firstAttribute="bottom" secondItem="a06-ur-rdv" secondAttribute="bottom" id="mdL-NJ-Qq6"/>
                 <constraint firstItem="a06-ur-rdv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oB6-zs-UQW"/>
                 <constraint firstAttribute="trailing" secondItem="a06-ur-rdv" secondAttribute="trailing" id="w7f-Wh-kOI"/>
+                <constraint firstAttribute="bottom" secondItem="ceJ-VM-DRl" secondAttribute="bottom" id="xV1-7X-FaC"/>
                 <constraint firstItem="7jI-4z-qdL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xcF-f9-ycN"/>
             </constraints>
         </view>
