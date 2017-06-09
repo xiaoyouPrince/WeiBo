@@ -13,6 +13,7 @@ class ComposeViewController: UIViewController {
     // MARK: - 懒加载属性
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView(frame: CGRect(x: 0, y: 0, width: kScreenW / 2, height: 40))
     fileprivate lazy var images : [UIImage] = [UIImage]()
+    fileprivate lazy var emotionVC : EmotionController = EmotionController()
     
     // MARK: - 控件属性
     @IBOutlet weak var textView: ComposeTextView!
@@ -53,6 +54,7 @@ class ComposeViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+
     
     
 }
@@ -104,6 +106,16 @@ extension ComposeViewController{
             self.view.layoutIfNeeded()
         }
         
+    }
+    
+    /// emotionBtn点击事件处理
+    @IBAction func emotionBtnClick() {
+        
+        textView.resignFirstResponder()
+        
+        textView.inputView = textView.inputView != nil ? nil : emotionVC.view
+        
+        textView.becomeFirstResponder()
     }
     
     

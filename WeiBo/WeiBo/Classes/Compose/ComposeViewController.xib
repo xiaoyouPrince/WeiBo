@@ -84,6 +84,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_emoticonbutton_background"/>
                                 <state key="highlighted" image="compose_emoticonbutton_background_highlighted"/>
+                                <connections>
+                                    <action selector="emotionBtnClick" destination="-1" eventType="touchUpInside" id="E36-Sw-eFK"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Xmo-7t-BNC"/>
