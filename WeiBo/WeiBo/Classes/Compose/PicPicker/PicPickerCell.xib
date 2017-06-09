@@ -47,6 +47,10 @@
                 <constraint firstItem="fDJ-Ds-ShS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZDF-S7-XbG"/>
             </constraints>
             <size key="customSize" width="107" height="110"/>
+            <connections>
+                <outlet property="addBtn" destination="fDJ-Ds-ShS" id="E0f-LY-lSP"/>
+                <outlet property="deleteBtn" destination="tzJ-lR-aB4" id="v0b-N6-3oC"/>
+            </connections>
             <point key="canvasLocation" x="-113.5" y="121"/>
         </collectionViewCell>
     </objects>

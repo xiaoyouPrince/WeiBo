@@ -12,6 +12,14 @@ private let picPickerCellID = "picPickerCellID"
 private let margin : CGFloat = 15
 
 class PicPickerView: UICollectionView {
+    
+    // MARK: - 属性
+    var images : [UIImage] = [UIImage]() {
+        didSet{
+            reloadData()
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,14 +61,14 @@ extension PicPickerView{
 extension PicPickerView : UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return images.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: picPickerCellID , for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: picPickerCellID , for: indexPath) as! PicPickerCell
         
-        cell.backgroundColor = UIColor.green
+        cell.image = indexPath.item <= images.count - 1 ? images[indexPath.item] : nil
         
         return cell
         

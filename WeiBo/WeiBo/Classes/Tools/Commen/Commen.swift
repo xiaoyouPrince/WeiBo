@@ -18,6 +18,12 @@ let redirect_uri = "http://www.520it.com"                               /// 回�
 let authUrlStr = "\(rootUrl)?client_id=\(app_key)&redirect_uri=\(redirect_uri)" /// authUrlstring
 
 
+// MARK: - 通知常量
+
+let picPickerAddPhotoNote = NSNotification.Name(rawValue: "picPickerAddPhotoNote")
+let picPickerDeletePhotoNote = NSNotification.Name(rawValue: "picPickerDeletePhotoNote")
+
+
 
 // MARK: - 测试地址
 
@@ -42,7 +48,7 @@ func Dlog<T>(_ message : T ,file : String = #file , funName : String = #function
     
     #if DEBUG
         
-        print("\(filePath):\(funName):\(lineNum)-\(message)")
+        print("\(filePath):\(funName):第\(lineNum)行-\n\(message)")
         
     #endif
 }

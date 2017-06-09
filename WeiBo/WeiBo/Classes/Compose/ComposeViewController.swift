@@ -6,20 +6,18 @@
 //  Copyright © 2017年 xiaoyouPrince. All rights reserved.
 //
 
-private let picPickerAddPhotoNote = NSNotification.Name(rawValue: "picPickerAddPhotoNote")
-private let picPickerDeletePhotoNote = NSNotification.Name(rawValue: "picPickerDeletePhotoNote")
-
-
 import UIKit
 
 class ComposeViewController: UIViewController {
     
     // MARK: - 懒加载属性
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView(frame: CGRect(x: 0, y: 0, width: kScreenW / 2, height: 40))
+    fileprivate lazy var images : [UIImage] = [UIImage]()
     
     // MARK: - 控件属性
     @IBOutlet weak var textView: ComposeTextView!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var picPickerView: PicPickerView!
     
     // MARK: - 约束
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
@@ -32,7 +30,7 @@ class ComposeViewController: UIViewController {
         
         setupNav()
         
-        addNotification()
+        addNotifications()
         
     }
     
@@ -110,14 +108,16 @@ extension ComposeViewController{
     
     
     /// 设置通知中心监听
-    fileprivate func addNotification(){
+    fileprivate func addNotifications(){
         
         // 1.监听键盘弹出和收回
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidChangeFrame(noti:)), name: .UIKeyboardWillChangeFrame, object: nil)
         
-        // 2.监听相册按钮
-//        NotificationCenter.default.addObserver(self, selector: #selector(picPickerAddPhoto), name:picPickerAddPhotoNote, object: nil)
+        // 2.添加和删除图片
+        NotificationCenter.default.addObserver(self, selector: #selector(picPickerAddPhoto), name:picPickerAddPhotoNote, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(picPickerDeletePhoto), name:picPickerDeletePhotoNote, object: nil)
+    
     }
     
     
@@ -141,11 +141,50 @@ extension ComposeViewController{
     
     @objc fileprivate func picPickerAddPhoto(){
         
+        
+        // 1.推出图片控制器
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            return
+        }
+        
+        let ipc = UIImagePickerController()
+        
+        ipc.sourceType = .photoLibrary
+        
+        ipc.delegate = self
+        
+        present(ipc, animated: true, completion: nil)
+        
+    }
+    
+    @objc fileprivate func picPickerDeletePhoto(){
+        
         print("sdfsdfsdfsdfsdfs")
         
         //  当前状体，需要做点击图片按钮的效果了
         
     }
+    
+}
+
+// MARK: - 图片选择控制器的代理方法
+extension ComposeViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        Dlog(info)
+        
+        // 得到原图
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // 传给picPickerView做数据源
+        images.append(image)
+        picPickerView.images = images
+        
+        // 推出ipc
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="WeiBo" customModuleProvider="target">
             <connections>
+                <outlet property="picPickerView" destination="ceJ-VM-DRl" id="QrW-Dk-Wob"/>
                 <outlet property="picPickerViewHCons" destination="iDQ-S9-aEF" id="ULO-Rf-FzW"/>
                 <outlet property="textView" destination="7jI-4z-qdL" id="Luj-5l-TEl"/>
                 <outlet property="toolBar" destination="a06-ur-rdv" id="XIB-Gp-KQ1"/>
