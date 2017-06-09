@@ -116,7 +116,7 @@ extension ComposeViewController{
         // 2.添加和删除图片
         NotificationCenter.default.addObserver(self, selector: #selector(picPickerAddPhoto), name:picPickerAddPhotoNote, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(picPickerDeletePhoto), name:picPickerDeletePhotoNote, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(picPickerDeletePhoto(note:)), name:picPickerDeletePhotoNote, object: nil)
     
     }
     
@@ -139,6 +139,8 @@ extension ComposeViewController{
         
     }
     
+    
+    /// 添加图片
     @objc fileprivate func picPickerAddPhoto(){
         
         
@@ -157,12 +159,22 @@ extension ComposeViewController{
         
     }
     
-    @objc fileprivate func picPickerDeletePhoto(){
+    /// 删除图片
+    @objc fileprivate func picPickerDeletePhoto(note : Notification){
         
-        print("sdfsdfsdfsdfsdfs")
+        //  1.删除不需要照片，从数据源中删除，重新赋值
+        guard let image = note.object as? UIImage else {
+            return
+        }
         
-        //  当前状体，需要做点击图片按钮的效果了
+        guard let index = self.images.index(of: image)else {
+            return
+        }
         
+        self.images.remove(at: index)
+        
+        picPickerView.images = self.images
+   
     }
     
 }
