@@ -47,8 +47,11 @@ extension EmotionController{
         cons += NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[cView]-0-[tBar]-0-|", options: [.alignAllLeft , .alignAllRight], metrics: nil, views: views)
         view.addConstraints(cons)
         
-        // 准备Collection
+        // 准备Collection / ToolBar
         prepareForCollectionView()
+        prepareForToolBar()
+        
+        
         
     }
     
@@ -57,9 +60,26 @@ extension EmotionController{
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier:emotionCellID)
         collectionView.dataSource = self
     }
+    
+    fileprivate func prepareForToolBar(){
+        
+        let titles = ["最近","表情"]
+        var items = [UIBarButtonItem]()
+        for title in titles {
+            let item = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(toolBarItemClick(index:)))
+            items.append(item)
+        }
+        toolBar.items = items
+        toolBar.tintColor = UIColor.orange
+    }
+    
+    @objc fileprivate func toolBarItemClick(index : Int){
+        
+    }
 
 }
 
+// MARK: - UICollectionViewDataSource
 extension EmotionController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,6 +94,7 @@ extension EmotionController : UICollectionViewDataSource {
 }
 
 
+// MARK: - 自定义UICollectionViewFlowLayout布局
 class CollectionViewEmotionLayout: UICollectionViewFlowLayout {
     
     override func prepare() {

@@ -15,6 +15,6 @@ let baseUrl = "https://api.weibo.com/2/"
 let statusPath = "\(baseUrl)statuses/"
 
 /// 首页接口
-let homgDataUrl = "\(statusPath)home_timeline.json" + "暂时不能用了"
+let homgDataUrl = "\(statusPath)home_timeline.json"
 
 
