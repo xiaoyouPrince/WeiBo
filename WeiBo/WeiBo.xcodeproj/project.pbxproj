@@ -58,6 +58,10 @@
 		B4F0F70F1ED91ECA009298EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F70E1ED91ECA009298EA /* User.swift */; };
 		B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7101ED93040009298EA /* StatusViewModel.swift */; };
 		B4F0F7151ED972A9009298EA /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7141ED972A9009298EA /* HomeViewCell.swift */; };
+		B4F325ED1EEC4FA1009CD943 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4F325EC1EEC4FA1009CD943 /* Emoticons.bundle */; };
+		B4F325F01EEC52B5009CD943 /* EmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325EF1EEC52B5009CD943 /* EmotionManager.swift */; };
+		B4F325F21EEC52D7009CD943 /* EmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325F11EEC52D7009CD943 /* EmotionPackage.swift */; };
+		B4F325F41EEC52E6009CD943 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325F31EEC52E6009CD943 /* Emotion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		B4F0F70E1ED91ECA009298EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4F0F7101ED93040009298EA /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		B4F0F7141ED972A9009298EA /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		B4F325EC1EEC4FA1009CD943 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		B4F325EF1EEC52B5009CD943 /* EmotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionManager.swift; sourceTree = "<group>"; };
+		B4F325F11EEC52D7009CD943 /* EmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionPackage.swift; sourceTree = "<group>"; };
+		B4F325F31EEC52E6009CD943 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		C2F68B2B67764D719C45BB2E /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +278,8 @@
 		B41EF4981EEA8EE20010C41C /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
+				B4F325EE1EEC5292009CD943 /* Model */,
+				B4F325EC1EEC4FA1009CD943 /* Emoticons.bundle */,
 				B41EF4991EEA8EF50010C41C /* EmotionController.swift */,
 			);
 			path = Emotion;
@@ -438,6 +448,16 @@
 			path = Compose;
 			sourceTree = "<group>";
 		};
+		B4F325EE1EEC5292009CD943 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4F325EF1EEC52B5009CD943 /* EmotionManager.swift */,
+				B4F325F11EEC52D7009CD943 /* EmotionPackage.swift */,
+				B4F325F31EEC52E6009CD943 /* Emotion.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -560,6 +580,7 @@
 				B4BC06441ED528330030E68E /* OAuthViewController.xib in Resources */,
 				B45664C11ECDF70C00BAD01F /* Assets.xcassets in Resources */,
 				B4C9788A1ECE99FB001D640E /* MainVCSettings.json in Resources */,
+				B4F325ED1EEC4FA1009CD943 /* Emoticons.bundle in Resources */,
 				B4D6FA001ECFE60000DA609F /* PopoverViewController.xib in Resources */,
 				B4C978971ECEC9EB001D640E /* Null.storyboard in Resources */,
 				B4C9788F1ECEC4E2001D640E /* Message.storyboard in Resources */,
@@ -661,14 +682,17 @@
 				B447F4811ED742E3005DBAB0 /* Status.swift in Sources */,
 				B4D3EA961ECFD3A9004D554B /* UIButton-Extension.swift in Sources */,
 				B4C9789D1ECEF5E5001D640E /* BaseViewController.swift in Sources */,
+				B4F325F41EEC52E6009CD943 /* Emotion.swift in Sources */,
 				B447F47E1ED73DF7005DBAB0 /* URL.swift in Sources */,
 				B41EF48F1EEA4B440010C41C /* PicPickerView.swift in Sources */,
+				B4F325F01EEC52B5009CD943 /* EmotionManager.swift in Sources */,
 				B4F0F70F1ED91ECA009298EA /* User.swift in Sources */,
 				B4F0F7151ED972A9009298EA /* HomeViewCell.swift in Sources */,
 				B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
 				B41D0C701EE5093700F2282A /* PicCollectionView.swift in Sources */,
+				B4F325F21EEC52D7009CD943 /* EmotionPackage.swift in Sources */,
 				B4C978851ECE8B09001D640E /* DiscoverViewController.swift in Sources */,
 				B4DD9C971EE93B1300BD25F5 /* ComposeViewController.swift in Sources */,
 			);

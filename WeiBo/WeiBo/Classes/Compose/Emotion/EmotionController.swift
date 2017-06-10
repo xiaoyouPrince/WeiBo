@@ -63,17 +63,36 @@ extension EmotionController{
     
     fileprivate func prepareForToolBar(){
         
-        let titles = ["最近","表情"]
+        let titles = ["最近","默认","emoji","浪小花"]
         var items = [UIBarButtonItem]()
+        var index = 0
         for title in titles {
-            let item = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(toolBarItemClick(index:)))
+            let item = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(toolBarItemClick(item:)))
+            item.tag = index
+            index += 1
             items.append(item)
+            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
         }
+        items.removeLast()
         toolBar.items = items
         toolBar.tintColor = UIColor.orange
     }
     
-    @objc fileprivate func toolBarItemClick(index : Int){
+    @objc fileprivate func toolBarItemClick(item : UIBarButtonItem){
+        
+        Dlog(item.tag)
+        
+        
+        let manager = EmotionManager()
+        
+        for package in manager.packages{
+            
+            for emotion in package.emotions {
+                
+                Dlog(emotion)
+            }
+        }
+        
         
     }
 
