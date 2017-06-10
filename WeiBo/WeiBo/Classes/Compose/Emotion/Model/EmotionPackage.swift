@@ -24,7 +24,13 @@ class EmotionPackage: NSObject {
         let plistPath = Bundle.main.path(forResource: "\(id)/info.plist", ofType: nil, inDirectory: "Emoticons.bundle")!
         let array = NSArray.init(contentsOfFile: plistPath) as! [[String : String]]
         
-        for dict in array {
+        for var dict in array {
+            
+            // 数据处理
+            if var png = dict["png"] {
+                png = "\(id)" + "/" + png
+                dict["dict"] = png
+            }
             
             let emotion = Emotion(dict : dict)
             
