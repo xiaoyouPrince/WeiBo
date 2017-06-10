@@ -16,6 +16,7 @@ class EmotionController: UIViewController {
     // MARK: - 属性
     fileprivate lazy var collectionView : UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: CollectionViewEmotionLayout())
     fileprivate lazy var toolBar : UIToolbar = UIToolbar()
+    fileprivate lazy var emotionManager : EmotionManager = EmotionManager()
     
 
     // MARK: - 生命周期
@@ -57,7 +58,7 @@ extension EmotionController{
     
     fileprivate func prepareForCollectionView(){
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier:emotionCellID)
+        collectionView.register(EmotionViewCell.self, forCellWithReuseIdentifier:emotionCellID)
         collectionView.dataSource = self
     }
     
@@ -101,13 +102,18 @@ extension EmotionController{
 // MARK: - UICollectionViewDataSource
 extension EmotionController : UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return emotionManager.packages.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return emotionManager.packages[section].emotions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emotionCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emotionCellID, for: indexPath) as! EmotionViewCell
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.gray
+        cell.emotion = emotionManager.packages[indexPath.section].emotions[indexPath.item]
         return cell
     }
 }

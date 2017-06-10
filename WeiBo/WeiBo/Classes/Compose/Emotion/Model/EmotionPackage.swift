@@ -29,7 +29,7 @@ class EmotionPackage: NSObject {
             // 数据处理
             if var png = dict["png"] {
                 png = "\(id)" + "/" + png
-                dict["dict"] = png
+                dict["png"] = png
             }
             
             let emotion = Emotion(dict : dict)

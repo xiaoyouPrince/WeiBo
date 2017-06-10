@@ -62,6 +62,7 @@
 		B4F325F01EEC52B5009CD943 /* EmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325EF1EEC52B5009CD943 /* EmotionManager.swift */; };
 		B4F325F21EEC52D7009CD943 /* EmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325F11EEC52D7009CD943 /* EmotionPackage.swift */; };
 		B4F325F41EEC52E6009CD943 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325F31EEC52E6009CD943 /* Emotion.swift */; };
+		B4F325F61EEC67EB009CD943 /* EmotionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F325F51EEC67EB009CD943 /* EmotionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		B4F325EF1EEC52B5009CD943 /* EmotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionManager.swift; sourceTree = "<group>"; };
 		B4F325F11EEC52D7009CD943 /* EmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionPackage.swift; sourceTree = "<group>"; };
 		B4F325F31EEC52E6009CD943 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		B4F325F51EEC67EB009CD943 /* EmotionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewCell.swift; sourceTree = "<group>"; };
 		C2F68B2B67764D719C45BB2E /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +283,7 @@
 				B4F325EE1EEC5292009CD943 /* Model */,
 				B4F325EC1EEC4FA1009CD943 /* Emoticons.bundle */,
 				B41EF4991EEA8EF50010C41C /* EmotionController.swift */,
+				B4F325F51EEC67EB009CD943 /* EmotionViewCell.swift */,
 			);
 			path = Emotion;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				B49C0D511ED833B700B220E6 /* Date-Extension.swift in Sources */,
 				B4BC06471ED53DFD0030E68E /* Commen.swift in Sources */,
 				B415906F1ECFF0710006C9E7 /* XYPresentationController.swift in Sources */,
+				B4F325F61EEC67EB009CD943 /* EmotionViewCell.swift in Sources */,
 				B41EF4961EEA51D30010C41C /* PicPickerCell.swift in Sources */,
 				B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */,
 				B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */,
