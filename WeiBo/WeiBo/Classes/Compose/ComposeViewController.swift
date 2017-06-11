@@ -68,6 +68,7 @@ class ComposeViewController: UIViewController {
         if emotion.isRemove {
             
             textView.deleteBackward()
+            return
         }
         
         //emoji表情，直接插入
@@ -79,8 +80,31 @@ class ComposeViewController: UIViewController {
              */
             
             textView.insertText(emotion.emojiCode!)
+            return
         }
         
+        // 普通表情（图文混排）
+        // 1.设置attachment
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(contentsOfFile: emotion.pngPath!)
+        let font = textView.font
+        attachment.bounds = CGRect(x: 0, y: -4, width: (font?.lineHeight)!, height: (font?.lineHeight)!)
+        
+        // 2.通过attachMent生成待使用属性字符串
+        let attrImageStr = NSAttributedString(attachment: attachment)
+        
+        // 3.取得原textView内容获得原属性字符串
+        let attrMStr = NSMutableAttributedString(attributedString: textView.attributedText)
+        
+        // 4.替换当前位置的属性字符串并重新赋值给textView
+        let range = textView.selectedRange
+        attrMStr.replaceCharacters(in: range, with: attrImageStr)
+    
+        textView.attributedText = attrMStr
+        
+        // 5.处理出现的遗留问题
+        textView.font = font
+        textView.selectedRange = NSMakeRange(range.location + 1, range.length)
     }
     
 }
