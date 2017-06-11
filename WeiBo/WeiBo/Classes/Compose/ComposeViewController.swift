@@ -13,7 +13,9 @@ class ComposeViewController: UIViewController {
     // MARK: - 懒加载属性
     fileprivate lazy var titleView : ComposeTitleView = ComposeTitleView(frame: CGRect(x: 0, y: 0, width: kScreenW / 2, height: 40))
     fileprivate lazy var images : [UIImage] = [UIImage]()
-    fileprivate lazy var emotionVC : EmotionController = EmotionController()
+    fileprivate lazy var emotionVC : EmotionController = EmotionController {[unowned self] (emtion) in
+        self.insertEmotionIntoTextView(emtion)
+    }
     
     // MARK: - 控件属性
     @IBOutlet weak var textView: ComposeTextView!
@@ -48,14 +50,38 @@ class ComposeViewController: UIViewController {
         textView.resignFirstResponder()
     }
     
-    
-    
     // 移除监听
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
     
+    fileprivate func insertEmotionIntoTextView(_ emotion : Emotion){
+        
+        Dlog(emotion)
+        
+        // 空表情 不行
+        if emotion.isEmpty {
+            return
+        }
+        
+        // 删除表情
+        if emotion.isRemove {
+            
+            textView.deleteBackward()
+        }
+        
+        //emoji表情，直接插入
+        if (emotion.emojiCode != nil) {
+            
+            /**
+             let textRange = textView.selectedTextRange!
+             textView.replace(textRange, withText: emotion.emojiCode!)
+             */
+            
+            textView.insertText(emotion.emojiCode!)
+        }
+        
+    }
     
 }
 

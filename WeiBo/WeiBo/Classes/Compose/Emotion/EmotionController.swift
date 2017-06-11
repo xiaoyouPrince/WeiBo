@@ -12,11 +12,27 @@ private let emotionCellID = "emotionCellID"
 
 class EmotionController: UIViewController {
     
+
+    // MARK: - 回调属性
+    var emotionCallBack : (_ emotion : Emotion) -> ()
     
-    // MARK: - 属性
+    // MARK: - 控件属性
     fileprivate lazy var collectionView : UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: CollectionViewEmotionLayout())
     fileprivate lazy var toolBar : UIToolbar = UIToolbar()
+    
+    // MARK: - 模型属性
     fileprivate lazy var emotionManager : EmotionManager = EmotionManager()
+    
+    init(emotionCallBack : @escaping(_ emotion : Emotion) ->()){
+        
+        self.emotionCallBack = emotionCallBack
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 
     // MARK: - 生命周期
@@ -118,9 +134,17 @@ extension EmotionController : UICollectionViewDataSource , UICollectionViewDeleg
         let emotion = emotionManager.packages[indexPath.section].emotions[indexPath.item]
         Dlog(emotion)
         
+        // 插入最近
         insertToRecentEmotion(emotion)
+        
+        // 回调给外界
+        self.emotionCallBack(emotion)
     }
     
+    
+    /// 插入最近表情
+    ///
+    /// - Parameter emotion: 对应表情
     func insertToRecentEmotion(_ emotion : Emotion) {
         
         // 1.空白和删除不能添加
@@ -145,8 +169,6 @@ extension EmotionController : UICollectionViewDataSource , UICollectionViewDeleg
         // 移除最后一个空白或最近（第20个）
         emotionManager.packages.first?.emotions.remove(at: 19)
     }
-
-
     
 }
 
