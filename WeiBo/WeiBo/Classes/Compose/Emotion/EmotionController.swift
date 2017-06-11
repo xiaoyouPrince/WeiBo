@@ -60,6 +60,7 @@ extension EmotionController{
         
         collectionView.register(EmotionViewCell.self, forCellWithReuseIdentifier:emotionCellID)
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     fileprivate func prepareForToolBar(){
@@ -93,8 +94,8 @@ extension EmotionController{
 
 }
 
-// MARK: - UICollectionViewDataSource
-extension EmotionController : UICollectionViewDataSource {
+// MARK: - UICollectionViewDataSource && delegate
+extension EmotionController : UICollectionViewDataSource , UICollectionViewDelegate{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return emotionManager.packages.count
@@ -110,6 +111,43 @@ extension EmotionController : UICollectionViewDataSource {
         cell.emotion = emotionManager.packages[indexPath.section].emotions[indexPath.item]
         return cell
     }
+    
+    // MARK: -  delegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+        let emotion = emotionManager.packages[indexPath.section].emotions[indexPath.item]
+        Dlog(emotion)
+        
+        insertToRecentEmotion(emotion)
+    }
+    
+    func insertToRecentEmotion(_ emotion : Emotion) {
+        
+        // 1.空白和删除不能添加
+        if emotion.isEmpty || emotion.isRemove {
+            return
+        }
+        
+        // 如果之前有就删除 / 没有就添加
+        if (emotionManager.packages.first?.emotions.contains(emotion))! {
+            let index = emotionManager.packages.first?.emotions.index(of: emotion)
+            emotionManager.packages.first?.emotions.remove(at: index!)
+            
+            // 删除完插入到最开始
+            emotionManager.packages.first?.emotions.insert(emotion, at: 0)
+            return
+            
+        }else
+        {
+            emotionManager.packages.first?.emotions.insert(emotion, at: 0)
+        }
+        
+        // 移除最后一个空白或最近（第20个）
+        emotionManager.packages.first?.emotions.remove(at: 19)
+    }
+
+
+    
 }
 
 
