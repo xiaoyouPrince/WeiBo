@@ -20,11 +20,11 @@ class EmotionManager: NSObject {
         packages.append(EmotionPackage(id: ""))
         
         // default
-        packages.append(EmotionPackage(id: "com.apple.emoji"))
-
-        // emoji
         packages.append(EmotionPackage(id: "com.sina.default"))
         
+        // emoji
+        packages.append(EmotionPackage(id: "com.apple.emoji"))
+
         // lxh 
         packages.append(EmotionPackage(id: "com.sina.lxh"))
     

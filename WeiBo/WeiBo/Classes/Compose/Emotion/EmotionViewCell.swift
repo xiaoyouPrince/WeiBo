@@ -24,6 +24,14 @@ class EmotionViewCell: UICollectionViewCell {
             emotionBtn.setImage(UIImage(contentsOfFile: emotion.pngPath ?? ""), for: .normal)
             Dlog(emotion.pngPath ?? "这里没有找到")
             emotionBtn.setTitle(emotion.emojiCode, for: .normal)
+            
+            if emotion.isRemove {
+                emotionBtn.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
+            }
+            
+            if emotion.isEmpty {
+                emotionBtn.setImage(UIImage(named: ""), for: .normal)
+            }
         }
     }
     
@@ -47,6 +55,7 @@ extension EmotionViewCell{
         
         self.contentView.addSubview(emotionBtn)
         emotionBtn.frame = self.bounds
+        emotionBtn.isUserInteractionEnabled = false
         emotionBtn.titleLabel?.font = UIFont.systemFont(ofSize: 32)
     }
     

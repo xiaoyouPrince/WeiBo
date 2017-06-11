@@ -45,13 +45,29 @@ class Emotion: NSObject {
     var chs : String?  /// 普通表情对应的文字
     
     // MARK: - 数据处理
-    var pngPath : String?
-    var emojiCode : String?
+    var pngPath : String?   ///表情图片的路径
+    var emojiCode : String?     ///code处理成 emojiCode码
+    var isRemove : Bool = false     ///记录是否是删除表情
+    var isEmpty : Bool = false     ///记录是否是空表情
     
     init(dict : [String : Any]){
         super.init()
         setValuesForKeys(dict)
         
+    }
+    
+    init(isRemove : Bool){
+        super.init()
+        
+        // 记录一下这个Emotion是删除表情
+        self.isRemove = isRemove
+    }
+    
+    init(isEmpty : Bool){
+        super.init()
+        
+        // 记录一下这个Emotion是空表情
+        self.isEmpty = isEmpty
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {    }

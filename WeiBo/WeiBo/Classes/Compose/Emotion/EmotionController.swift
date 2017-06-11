@@ -37,7 +37,7 @@ extension EmotionController{
         // 添加
         self.view.addSubview(collectionView)
         self.view.addSubview(toolBar)
-        collectionView.backgroundColor = UIColor.brown
+        collectionView.backgroundColor = UIColor.white
         toolBar.backgroundColor = UIColor.darkGray
 
         // 手动布局
@@ -81,19 +81,13 @@ extension EmotionController{
     
     @objc fileprivate func toolBarItemClick(item : UIBarButtonItem){
         
-        Dlog(item.tag)
+        Dlog("跳转到对应的 emoji 组中")
         
+        let tag = item.tag
         
-        let manager = EmotionManager()
+        let indexPath = NSIndexPath(item: 0, section: tag) as IndexPath
         
-        for package in manager.packages{
-            
-            for emotion in package.emotions {
-                
-                Dlog(emotion)
-            }
-        }
-        
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         
     }
 
@@ -112,7 +106,7 @@ extension EmotionController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emotionCellID, for: indexPath) as! EmotionViewCell
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.gray
+        //cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.gray
         cell.emotion = emotionManager.packages[indexPath.section].emotions[indexPath.item]
         return cell
     }
