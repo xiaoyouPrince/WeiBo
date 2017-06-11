@@ -16,9 +16,12 @@ class EmotionPackage: NSObject {
     
     // 根据 path 添加对应的package
     init(id : String){
+        super.init()
         
         // 判断是 recent
         if id == "" {
+            
+            addEmptyEmotion(isRecent: true)
             return
         }
         
@@ -46,10 +49,19 @@ class EmotionPackage: NSObject {
         }
         
         // 添加空表情
+        addEmptyEmotion(isRecent: false)
+    }
+    
+    
+    /// 添加空表情
+    ///
+    /// - Parameter isRecent: 是否是最近
+    fileprivate func addEmptyEmotion(isRecent : Bool) {
+        
         let count = emotions.count % 21
         
         // 防止是 recent == 0 的情况
-        if count == 0 {
+        if count == 0 && !isRecent{
             return
         }
         
