@@ -28,6 +28,7 @@
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
 		B4834DBF1EEE228000DD7D7F /* EmotionAttchment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4834DBE1EEE228000DD7D7F /* EmotionAttchment.swift */; };
+		B4834DC11EEE2B3200DD7D7F /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4834DC01EEE2B3200DD7D7F /* UITextView+Extension.swift */; };
 		B49C0D511ED833B700B220E6 /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C0D501ED833B700B220E6 /* Date-Extension.swift */; };
 		B4A974111EE991B9003558B8 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A974101EE991B9003558B8 /* ComposeTextView.swift */; };
 		B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC063E1ED5236A0030E68E /* NetworkTools.swift */; };
@@ -112,6 +113,7 @@
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4834DBE1EEE228000DD7D7F /* EmotionAttchment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAttchment.swift; sourceTree = "<group>"; };
+		B4834DC01EEE2B3200DD7D7F /* UITextView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		B49C0D501ED833B700B220E6 /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 		B4A974101EE991B9003558B8 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		B4BC063E1ED5236A0030E68E /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				B41EF4991EEA8EF50010C41C /* EmotionController.swift */,
 				B4F325F51EEC67EB009CD943 /* EmotionViewCell.swift */,
 				B4834DBE1EEE228000DD7D7F /* EmotionAttchment.swift */,
+				B4834DC01EEE2B3200DD7D7F /* UITextView+Extension.swift */,
 			);
 			path = Emotion;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
 				B41D0C701EE5093700F2282A /* PicCollectionView.swift in Sources */,
+				B4834DC11EEE2B3200DD7D7F /* UITextView+Extension.swift in Sources */,
 				B4F325F21EEC52D7009CD943 /* EmotionPackage.swift in Sources */,
 				B4C978851ECE8B09001D640E /* DiscoverViewController.swift in Sources */,
 				B4DD9C971EE93B1300BD25F5 /* ComposeViewController.swift in Sources */,

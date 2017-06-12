@@ -112,22 +112,19 @@ extension NetworkTools{
             }
             
             // 判断请求是否出错
-            if (result["error_code"]) != nil{
-                
-                finishCallBack(result as? [[String : AnyObject]])
-                
-            }else{
-                
+//            if (result["error_code"]) != nil{
+//                
+//                finishCallBack(result as? [[String : AnyObject]])
+//                
+//            }else{
+            
                 // 为出错
                 guard let statusesArray = result["statuses"] as? [[String : AnyObject]] else {
                     return
                 }
                 
                 finishCallBack(statusesArray)
-            }
-
-            
-            
+//            }
 
         }
         
