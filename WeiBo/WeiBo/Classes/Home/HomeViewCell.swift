@@ -63,6 +63,51 @@ class HomeViewCell: UITableViewCell {
                     viewModel.cellHeight = self.bottomToolBar.frame.maxY
                 }
                 
+                // MARK: - RELabel监听点击
+                
+                // 监听用户的点击
+                contentLabel.userTapHandler = { (label, user, range) in
+                    print(label)
+                    print(user)
+                    print(range)
+                }
+                
+                // 监听链接的点击
+                contentLabel.linkTapHandler = { (label, link, range) in
+                    print(label)
+                    print(link)
+                    print(range)
+                }
+                
+                // 监听话题的点击
+                contentLabel.topicTapHandler = { (label, topic, range) in
+                    print(label)
+                    print(topic)
+                    print(range)
+                }
+                
+                // 监听用户的点击
+                retweetContentLabel.userTapHandler = { (label, user, range) in
+                    print(label)
+                    print(user)
+                    print(range)
+                }
+                
+                // 监听链接的点击
+                retweetContentLabel.linkTapHandler = { (label, link, range) in
+                    print(label)
+                    print(link)
+                    print(range)
+                }
+                
+                // 监听话题的点击
+                retweetContentLabel.topicTapHandler = { (label, topic, range) in
+                    print(label)
+                    print(topic)
+                    print(range)
+                }
+
+                
             }
         }
     }
@@ -91,11 +136,11 @@ class HomeViewCell: UITableViewCell {
     /// 微博来源
     @IBOutlet weak var sourceLabel: UILabel!
     /// 微博正文
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: RELabel!
     /// 微博图片内容
     @IBOutlet weak var picView: PicCollectionView!
     /// 转发微博内容
-    @IBOutlet weak var retweetContentLabel: UILabel!
+    @IBOutlet weak var retweetContentLabel: RELabel!
     /// 转发微博背景
     @IBOutlet weak var retweetStatusBGView: UIView!
     /// 底部工具栏

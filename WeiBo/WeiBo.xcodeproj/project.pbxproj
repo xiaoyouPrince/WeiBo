@@ -26,6 +26,7 @@
 		B45664C41ECDF70C00BAD01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45664C21ECDF70C00BAD01F /* LaunchScreen.storyboard */; };
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
+		B46B8D3B1EEEF5260074EB66 /* RELabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B8D3A1EEEF5260074EB66 /* RELabel.swift */; };
 		B4834DCC1EEE3F2B00DD7D7F /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4834DC31EEE3F2B00DD7D7F /* Emoticons.bundle */; };
 		B4834DCD1EEE3F2B00DD7D7F /* EmotionAttchment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4834DC41EEE3F2B00DD7D7F /* EmotionAttchment.swift */; };
 		B4834DCE1EEE3F2B00DD7D7F /* EmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4834DC51EEE3F2B00DD7D7F /* EmotionController.swift */; };
@@ -112,6 +113,7 @@
 		B45664D51ECDF70C00BAD01F /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B46B8D3A1EEEF5260074EB66 /* RELabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RELabel.swift; sourceTree = "<group>"; };
 		B4834DC31EEE3F2B00DD7D7F /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		B4834DC41EEE3F2B00DD7D7F /* EmotionAttchment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAttchment.swift; sourceTree = "<group>"; };
 		B4834DC51EEE3F2B00DD7D7F /* EmotionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionController.swift; sourceTree = "<group>"; };
@@ -354,6 +356,14 @@
 			path = WeiBoUITests;
 			sourceTree = "<group>";
 		};
+		B46B8D391EEEF4A80074EB66 /* RegexLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B46B8D3A1EEEF5260074EB66 /* RELabel.swift */,
+			);
+			path = RegexLabel;
+			sourceTree = "<group>";
+		};
 		B4834DC21EEE3F2B00DD7D7F /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +427,7 @@
 		B4C978981ECEEBD3001D640E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B46B8D391EEEF4A80074EB66 /* RegexLabel */,
 				B4834DC21EEE3F2B00DD7D7F /* Emotion */,
 				B447F47C1ED73DCC005DBAB0 /* Public */,
 				B4BC06451ED53DE90030E68E /* Commen */,
@@ -704,6 +715,7 @@
 				B4834DCF1EEE3F2B00DD7D7F /* EmotionViewCell.swift in Sources */,
 				B4834DD11EEE3F2B00DD7D7F /* EmotionManager.swift in Sources */,
 				B4F0F7151ED972A9009298EA /* HomeViewCell.swift in Sources */,
+				B46B8D3B1EEEF5260074EB66 /* RELabel.swift in Sources */,
 				B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */,
 				B44DDDB51ECF2F64002AF0AD /* VisitorView.swift in Sources */,
 				B4C978811ECE8AEB001D640E /* HomeViewController.swift in Sources */,
