@@ -85,7 +85,8 @@ class ComposeViewController: UIViewController {
         
         // 普通表情（图文混排）
         // 1.设置attachment
-        let attachment = NSTextAttachment()
+        let attachment = EmotionAttchment()
+        attachment.chs = emotion.chs
         attachment.image = UIImage(contentsOfFile: emotion.pngPath!)
         let font = textView.font
         attachment.bounds = CGRect(x: 0, y: -4, width: (font?.lineHeight)!, height: (font?.lineHeight)!)
@@ -140,6 +141,23 @@ extension ComposeViewController{
     
     /// 发送 item 点击
     @objc fileprivate func commitItemClick(){
+        
+        // 1.获取属性字符串
+        let attrStr = NSMutableAttributedString(attributedString: textView.attributedText)
+        
+        // 2.遍历 attrStr 对原有的表情进行替换
+        let range = NSMakeRange(0, attrStr.length)
+        attrStr.enumerateAttributes(in: range, options: []) { (dict, range, _) in
+            
+            Dlog("\(String(describing: dict))" + "-----" + "(\(range.location),\(range.length))")
+            
+            if  let attachment = dict["NSAttachment"] as? EmotionAttchment {
+                attrStr.replaceCharacters(in: range, with: attachment.chs!)
+            }
+            
+            Dlog(attrStr.string)
+        }
+        
         
     }
     

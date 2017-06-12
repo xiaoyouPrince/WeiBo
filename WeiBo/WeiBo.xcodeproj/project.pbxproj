@@ -27,6 +27,7 @@
 		B45664C41ECDF70C00BAD01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45664C21ECDF70C00BAD01F /* LaunchScreen.storyboard */; };
 		B45664CF1ECDF70C00BAD01F /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664CE1ECDF70C00BAD01F /* WeiBoTests.swift */; };
 		B45664DA1ECDF70C00BAD01F /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */; };
+		B4834DBF1EEE228000DD7D7F /* EmotionAttchment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4834DBE1EEE228000DD7D7F /* EmotionAttchment.swift */; };
 		B49C0D511ED833B700B220E6 /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C0D501ED833B700B220E6 /* Date-Extension.swift */; };
 		B4A974111EE991B9003558B8 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A974101EE991B9003558B8 /* ComposeTextView.swift */; };
 		B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC063E1ED5236A0030E68E /* NetworkTools.swift */; };
@@ -110,6 +111,7 @@
 		B45664D51ECDF70C00BAD01F /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45664D91ECDF70C00BAD01F /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		B45664DB1ECDF70C00BAD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4834DBE1EEE228000DD7D7F /* EmotionAttchment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAttchment.swift; sourceTree = "<group>"; };
 		B49C0D501ED833B700B220E6 /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 		B4A974101EE991B9003558B8 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		B4BC063E1ED5236A0030E68E /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B4F325EC1EEC4FA1009CD943 /* Emoticons.bundle */,
 				B41EF4991EEA8EF50010C41C /* EmotionController.swift */,
 				B4F325F51EEC67EB009CD943 /* EmotionViewCell.swift */,
+				B4834DBE1EEE228000DD7D7F /* EmotionAttchment.swift */,
 			);
 			path = Emotion;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4834DBF1EEE228000DD7D7F /* EmotionAttchment.swift in Sources */,
 				B4C978871ECE8B14001D640E /* ProfileViewController.swift in Sources */,
 				B4030E1F1ED680ED00E48DE9 /* WelcomeViewController.swift in Sources */,
 				B4D3EA951ECFD3A9004D554B /* UIBarButtonItem-Extension.swift in Sources */,
