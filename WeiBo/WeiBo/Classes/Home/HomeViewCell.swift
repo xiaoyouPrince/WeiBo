@@ -154,12 +154,15 @@ extension HomeViewCell{
             
             // 3.1取出缓存图片，根据该图片的Size进行返回
             let imageurl = self.statusVM?.picURLs.first?.absoluteString
-            let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: imageurl)
             
-            // 3.2 设置单张配图的layout.itemSize
-            layout.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
-
-            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            if let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: imageurl)
+             {
+                // 3.2 设置单张配图的layout.itemSize
+                layout.itemSize = CGSize(width: (image.size.width) * 2, height: (image.size.height) * 2)
+                // 3.3.返回对应的size
+                return CGSize(width: (image.size.width) * 2, height: (image.size.height) * 2)
+            }
+            
         }
         
         // 4.计算多张配图imageView的WH
@@ -169,7 +172,7 @@ extension HomeViewCell{
         
         // 5.张配图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + itemMargin
+            let picViewWH = imageViewWH * 2 + itemMargin + 1
             return CGSize(width: picViewWH, height: picViewWH)
         }
         

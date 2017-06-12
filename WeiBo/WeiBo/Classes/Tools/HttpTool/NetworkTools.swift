@@ -63,6 +63,8 @@ class NetworkTools {
         }
     }
     
+    
+    
 }
 
 
@@ -129,4 +131,24 @@ extension NetworkTools{
         }
         
     }
+    
+    
+    
+    /// 发送文字微博
+    ///
+    /// - Parameters:
+    ///   - statusText: 微博内容
+    ///   - finishCallBack: 回调
+    class func postStatus( statusText : String , finishCallBack : @escaping (_ isSuccess : Bool) -> ()) {
+        
+        let accessToken = UserAccountViewModel.shareInstance.account?.access_token
+        let params = ["access_token" : accessToken , "status" : statusText]
+
+        requestData(type: .POST, URLString: "https://api.weibo.com/2/statuses/update.json", parameters: params as Any as? [String : Any]) { (result) in
+            
+            Dlog(result)
+            finishCallBack(true)
+        }
+    }
+    
 }

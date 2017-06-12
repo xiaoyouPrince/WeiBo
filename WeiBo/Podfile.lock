@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - Alamofire (4.4.0)
   - Kingfisher (3.1.4)
   - MJRefresh (3.1.12)
@@ -9,6 +24,7 @@ PODS:
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
+  - AFNetworking
   - Alamofire (~> 4.4)
   - Kingfisher (~> 3.1.1)
   - MJRefresh
@@ -17,6 +33,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -24,6 +41,6 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 813763b3af1e26b3c00274f9848577c32084c32e
+PODFILE CHECKSUM: ae2d71e8a79c7fe6648c66c93a5cfad102ee1811
 
 COCOAPODS: 1.2.1.beta.1

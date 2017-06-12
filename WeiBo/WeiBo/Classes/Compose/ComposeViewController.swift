@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     
@@ -58,6 +59,7 @@ class ComposeViewController: UIViewController {
     fileprivate func insertEmotionIntoTextView(_ emotion : Emotion){
         
         textView.insertEmotionToTextView(emotion: emotion)
+        textView.didChangeValue(forKey: "")
     }
     
 }
@@ -94,7 +96,30 @@ extension ComposeViewController{
     /// 发送 item 点击
     @objc fileprivate func commitItemClick(){
         
-        Dlog(textView.getAttributeString())
+        SVProgressHUD.show(withStatus: "")
+        SVProgressHUD.show()
+        
+        textView.resignFirstResponder()
+        let statusText = textView.getAttributeString()
+        
+        let callBack = {[weak self](isSuccess : Bool) -> () in
+        
+            if isSuccess {
+                SVProgressHUD.showSuccess(withStatus: "发送成功！")
+                self!.dismiss(animated: true, completion: nil)
+            }else
+            {
+                SVProgressHUD.showSuccess(withStatus: "发送失败！")
+                return
+            }
+        }
+        
+        if images.count != 0 {
+            HttpTools.sendStatus(statusText: statusText, image: images.first!, finishCallBack: callBack)
+        }else
+        {
+            NetworkTools.postStatus(statusText: statusText, finishCallBack: callBack)
+        }
         
     }
     
