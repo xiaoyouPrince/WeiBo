@@ -86,7 +86,7 @@
 9. 添加提示更新微博数目的Label
 
 【当前效果】：<br>
-![5.25](http://oozx6yayl.bkt.clouddn.com/5.25WeiBo.gif)
+![5.25](http://oozx6yayl.bkt.clouddn.com/5.25WeiBo2.gif)
 
 
 ## 主要页面效果如图
