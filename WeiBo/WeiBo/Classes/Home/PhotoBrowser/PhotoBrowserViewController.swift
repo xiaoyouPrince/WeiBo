@@ -14,8 +14,8 @@ import SVProgressHUD
 class PhotoBrowserViewController: UIViewController {
     
     // MARK: - 属性
-    var indexPath : IndexPath?
-    var urls : [URL]?
+    var indexPath : IndexPath
+    var urls : [URL]
     
     // MARK:- 懒加载属性
     fileprivate lazy var collectionView : UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: PhotoBrowserCollectionViewLayout())
@@ -41,6 +41,7 @@ class PhotoBrowserViewController: UIViewController {
         super.loadView()
         
         view.frame.size.width += 20
+    
     }
     
     
@@ -49,6 +50,8 @@ class PhotoBrowserViewController: UIViewController {
         
         setupUI()
         
+        // 一进来直接滚动到当前indexPath去
+        collectionView.scrollToItem(at: self.indexPath, at: .left, animated: false)
     }
 
 }
@@ -103,7 +106,7 @@ extension PhotoBrowserViewController {
         }
         
         // 2.将image对象保存相册
-        UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @objc private func image(image : UIImage, didFinishSavingWithError error : NSError?, contextInfo : AnyObject) {
@@ -125,22 +128,58 @@ extension PhotoBrowserViewController : UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return (urls?.count)!
+        return (urls.count)
     }
 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserCell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserCell, for: indexPath) as! PhotoBrowserViewCell
         
+        cell.picUrl = urls[indexPath.item]
+        cell.delegate = self
         
         return cell
     }
 }
 
 
+// MARK:- PhotoBrowserViewCell的代理方法
+extension PhotoBrowserViewController : PhotoBrowserViewCellDelegate {
+    func imageViewClick() {
+        closeBtnClick()
+    }
+}
+
+// MARK:- 遵守AnimatorDismissDelegate
+extension PhotoBrowserViewController : AnimatorDismissDelegate {
+    
+    func indexPathForDimissView() -> IndexPath {
+        // 1.获取当前正在显示的indexPath
+        let cell = collectionView.visibleCells.first!
+        
+        return collectionView.indexPath(for: cell)!
+    }
+    
+    func imageViewForDimissView() -> UIImageView {
+        // 1.创建UIImageView对象
+        let imageView = UIImageView()
+        
+        // 2.设置imageView的frame
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        imageView.frame = cell.imageView.frame
+        imageView.image = cell.imageView.image
+        
+        // 3.设置imageView的属性
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        
+        return imageView
+    }
+}
 
 
+// MARK: - 自定义UICollectionViewFlowLayout()
 class PhotoBrowserCollectionViewLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
@@ -157,5 +196,4 @@ class PhotoBrowserCollectionViewLayout: UICollectionViewFlowLayout {
         collectionView?.showsHorizontalScrollIndicator = false
         
     }
-    
 }

@@ -53,6 +53,56 @@ extension PicCollectionView : UICollectionViewDataSource , UICollectionViewDeleg
 }
 
 
+extension PicCollectionView : AnimatorPresentedDelegate {
+    func startRect(indexPath: IndexPath) -> CGRect {
+        // 1.获取cell
+        let cell = self.cellForItem(at: indexPath as IndexPath)!
+        
+        // 2.获取cell的frame
+        let startFrame = self.convert(cell.frame, to: UIApplication.shared.keyWindow)
+        
+        return startFrame
+    }
+    
+    func endRect(indexPath: IndexPath) -> CGRect {
+        // 1.获取该位置的image对象
+        let picURL = picUrls[indexPath.item]
+        let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: picURL.absoluteString)
+        
+        
+        // 2.计算结束后的frame
+        let w = UIScreen.main.bounds.width
+        let h = w / (image?.size.width)! * (image?.size.height)!
+        var y : CGFloat = 0
+        if h > UIScreen.main.bounds.height {
+            y = 0
+        } else {
+            y = (UIScreen.main.bounds.height - h) * 0.5
+        }
+        
+        return CGRect(x: 0, y: y, width: w, height: h)
+    }
+    
+    func imageView(indexPath: IndexPath) -> UIImageView {
+        // 1.创建UIImageView对象
+        let imageView = UIImageView()
+        
+        // 2.获取该位置的image对象
+        let picURL = picUrls[indexPath.item]
+        let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
+        
+        // 3.设置imageView的属性
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        
+        return imageView
+    }
+}
+
+
+
+
 class PicCollectionViewCell: UICollectionViewCell {
     
     // MARK: - 控件属性

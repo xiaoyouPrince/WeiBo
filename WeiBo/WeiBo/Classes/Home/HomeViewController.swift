@@ -31,6 +31,7 @@ class HomeViewController: BaseViewController {
     fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[unowned self] (dismissFinished) in
         self.titleBtn.isSelected = dismissFinished
     }
+    fileprivate lazy var photoBrowserAnimator : PhotoBrowserAnimator = PhotoBrowserAnimator()
     var statusViewModels : [StatusViewModel] = [StatusViewModel]()
     
     
@@ -68,8 +69,6 @@ extension HomeViewController{
     
     /// buildUI
     func buildUI() {
-        
-        
         
         setupNavigationBar()
     }
@@ -121,9 +120,18 @@ extension HomeViewController{
         
         let indexPath = note.userInfo?[ShowPhotoBrowserIndexKey] as! IndexPath
         let urls = note.userInfo?[ShowPhotoBrowserUrlsKey] as! [URL]
+        let object = note.object as! PicCollectionView
     
         let photoBrowser = PhotoBrowserViewController(indexPath: indexPath , urls: urls )
         photoBrowser.modalPresentationStyle = .custom
+        
+        // 3.设置转场的代理
+        photoBrowser.transitioningDelegate = photoBrowserAnimator
+        
+        // 4.设置动画的代理
+        photoBrowserAnimator.presentedDelegate = object
+        photoBrowserAnimator.indexPath = indexPath
+        photoBrowserAnimator.dismissDelegate = photoBrowser
         present(photoBrowser, animated: true, completion: nil)
      
     }

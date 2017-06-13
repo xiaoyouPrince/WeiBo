@@ -67,6 +67,8 @@
 		B4DD9C9A1EE9564800BD25F5 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD9C991EE9564800BD25F5 /* ComposeTitleView.swift */; };
 		B4E3C75E1EEFC9B7006B52BA /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3C75D1EEFC9B7006B52BA /* PhotoBrowserViewController.swift */; };
 		B4E3C7601EEFCEE1006B52BA /* PhotoBrowserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3C75F1EEFCEE1006B52BA /* PhotoBrowserViewCell.swift */; };
+		B4E3C7621EEFE6FA006B52BA /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3C7611EEFE6FA006B52BA /* PhotoBrowserAnimator.swift */; };
+		B4E3C7641EEFE7FD006B52BA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3C7631EEFE7FD006B52BA /* ProgressView.swift */; };
 		B4F0F70F1ED91ECA009298EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F70E1ED91ECA009298EA /* User.swift */; };
 		B4F0F7111ED93040009298EA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7101ED93040009298EA /* StatusViewModel.swift */; };
 		B4F0F7151ED972A9009298EA /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F7141ED972A9009298EA /* HomeViewCell.swift */; };
@@ -157,6 +159,8 @@
 		B4DD9C991EE9564800BD25F5 /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
 		B4E3C75D1EEFC9B7006B52BA /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		B4E3C75F1EEFCEE1006B52BA /* PhotoBrowserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewCell.swift; sourceTree = "<group>"; };
+		B4E3C7611EEFE6FA006B52BA /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
+		B4E3C7631EEFE7FD006B52BA /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B4F0F70E1ED91ECA009298EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4F0F7101ED93040009298EA /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		B4F0F7141ED972A9009298EA /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -494,6 +498,8 @@
 			children = (
 				B4E3C75D1EEFC9B7006B52BA /* PhotoBrowserViewController.swift */,
 				B4E3C75F1EEFCEE1006B52BA /* PhotoBrowserViewCell.swift */,
+				B4E3C7611EEFE6FA006B52BA /* PhotoBrowserAnimator.swift */,
+				B4E3C7631EEFE7FD006B52BA /* ProgressView.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -711,6 +717,7 @@
 				B41EF4961EEA51D30010C41C /* PicPickerCell.swift in Sources */,
 				B4BC06431ED528330030E68E /* OAuthViewController.swift in Sources */,
 				B4BC063F1ED5236A0030E68E /* NetworkTools.swift in Sources */,
+				B4E3C7621EEFE6FA006B52BA /* PhotoBrowserAnimator.swift in Sources */,
 				B4A974111EE991B9003558B8 /* ComposeTextView.swift in Sources */,
 				B4C9787F1ECE8711001D640E /* MainViewController.swift in Sources */,
 				B4834DD21EEE3F2B00DD7D7F /* EmotionPackage.swift in Sources */,
@@ -719,6 +726,7 @@
 				B4E3C75E1EEFC9B7006B52BA /* PhotoBrowserViewController.swift in Sources */,
 				B4DD9C9A1EE9564800BD25F5 /* ComposeTitleView.swift in Sources */,
 				B4C978831ECE8AFA001D640E /* MessageViewController.swift in Sources */,
+				B4E3C7641EEFE7FD006B52BA /* ProgressView.swift in Sources */,
 				B4C5F5CD1ED4250300564972 /* PopoverAnimator.swift in Sources */,
 				B4030E1B1ED6726A00E48DE9 /* UserAccountViewModel.swift in Sources */,
 				B447F4811ED742E3005DBAB0 /* Status.swift in Sources */,
