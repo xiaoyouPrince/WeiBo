@@ -32,4 +32,13 @@ extension UIButton{
         sizeToFit()
     }
     
+    /// 遍历构造行数
+    convenience init(bgColor : UIColor , fontSize : CGFloat , title : String) {
+        self.init()
+        
+        backgroundColor = bgColor
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitle(title, for: .normal)
+    }
+    
 }

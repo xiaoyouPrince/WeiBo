@@ -77,11 +77,23 @@ class StatusViewModel: NSObject {
             
             for picurlDict in picurlDicts{
                 
+                /**
+                    thumbnail_pic : 缩略图
+                    bmiddle_pic : 中等图
+                    original_pic : 原图
+                 */
                 guard let picUrlString = picurlDict["thumbnail_pic"] else {
                     continue
                 }
                 
-                self.picURLs.append(URL(string : picUrlString)!)
+                // 替换成原图、中图
+                var urlStr = ""
+                if picUrlString.contains("thumbnail") {
+                    let range = (picUrlString as NSString).range(of: "thumbnail")
+                    urlStr = (picUrlString as NSString).replacingCharacters(in: range, with: "bmiddle")
+                }
+                
+                self.picURLs.append(URL(string : urlStr)!)
                 
             }
         }

@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class TitleButton: UIButton {
 
     override init(frame: CGRect) {
@@ -35,5 +33,6 @@ class TitleButton: UIButton {
         titleLabel!.frame.origin.x = 0
         imageView!.frame.origin.x = (titleLabel?.frame.size.width)! + 5
     }
+    
 }
 

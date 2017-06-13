@@ -28,7 +28,9 @@ class HomeViewCell: UITableViewCell {
                 userNameLabel.text = viewModel.status.user?.screen_name
                 creatAtLabel.text = viewModel.creatTimeStr
                 sourceLabel.text = viewModel.sourceText
-                contentLabel.text = viewModel.status.text
+//                contentLabel.text = viewModel.status.text
+                let statusText = viewModel.status.text
+                contentLabel.attributedText = FindEmotion.shareIntance.findAttrString(statusText: statusText, font: UIFont.systemFont(ofSize: 14))
                 userNameLabel.textColor = vipIcon.image == nil ? UIColor.black : UIColor.orange // 设置用户名文字颜色
                 // 计算picView的宽度和高度                
                 picViewHcons.constant = self.calculatePicViewSize(count: (statusVM?.picURLs.count ?? 0)! ).height
@@ -203,9 +205,9 @@ extension HomeViewCell{
             if let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: imageurl)
              {
                 // 3.2 设置单张配图的layout.itemSize
-                layout.itemSize = CGSize(width: (image.size.width) * 2, height: (image.size.height) * 2)
+                layout.itemSize = CGSize(width: ((image.size.width) * 2) > 150 ? 150 : ((image.size.width) * 2 ), height: (image.size.height) * 2 > 100 ? 100 : (image.size.height) * 2)
                 // 3.3.返回对应的size
-                return CGSize(width: (image.size.width) * 2, height: (image.size.height) * 2)
+                return layout.itemSize
             }
             
         }

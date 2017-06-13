@@ -53,6 +53,12 @@ class HomeViewController: BaseViewController {
         addRefreshComponent()
         
     
+        // 添加通知
+        setNotifications()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -103,6 +109,23 @@ extension HomeViewController{
  
         self.present(pop, animated: true, completion: nil)
         
+    }
+    
+    
+    /// 添加通知
+    fileprivate func setNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser(note:)) , name: ShowPhotoBrowserNote, object: nil)
+    }
+    
+    @objc fileprivate func showPhotoBrowser(note : Notification){
+        
+        let indexPath = note.userInfo?[ShowPhotoBrowserIndexKey] as! IndexPath
+        let urls = note.userInfo?[ShowPhotoBrowserUrlsKey] as! [URL]
+    
+        let photoBrowser = PhotoBrowserViewController(indexPath: indexPath , urls: urls )
+        photoBrowser.modalPresentationStyle = .custom
+        present(photoBrowser, animated: true, completion: nil)
+     
     }
     
 }

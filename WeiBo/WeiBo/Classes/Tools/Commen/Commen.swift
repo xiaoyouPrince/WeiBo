@@ -8,20 +8,32 @@
 
 import UIKit
 
+/// itravel 的 app信息，临时使用
+let app_key = "2681167680"
+let app_secret = "5072b1af9da41b457202eb8b7ebfa30f"
+let redirect_uri = "http://www.baidu.com"
+
 
 // MARK: - 一些微博授权常量
 
 private let rootUrl = "https://api.weibo.com/oauth2/authorize"          /// 授权根路径
-let app_key = "2625427871"                                              /// client_id 对应参数 app_key
-let app_secret = "eca1ed907d76ad6f6ce62a8feda67a1c"                     /// app_secret
-let redirect_uri = "http://www.520it.com"                               /// 回调路径
+//let app_key = "2625427871"                                              /// client_id 对应参数 app_key
+//let app_secret = "eca1ed907d76ad6f6ce62a8feda67a1c"                     /// app_secret
+//let redirect_uri = "http://www.520it.com"                               /// 回调路径
 let authUrlStr = "\(rootUrl)?client_id=\(app_key)&redirect_uri=\(redirect_uri)" /// authUrlstring
 
 
 // MARK: - 通知常量
 
+// 发微博添加/删除 image的通知
 let picPickerAddPhotoNote = NSNotification.Name(rawValue: "picPickerAddPhotoNote")
 let picPickerDeletePhotoNote = NSNotification.Name(rawValue: "picPickerDeletePhotoNote")
+
+
+let ShowPhotoBrowserIndexKey = "ShowPhotoBrowserIndexKey"
+let ShowPhotoBrowserUrlsKey = "ShowPhotoBrowserUrlsKey"
+
+let ShowPhotoBrowserNote = NSNotification.Name(rawValue: "picPickerDeletePhotoNote")
 
 
 
