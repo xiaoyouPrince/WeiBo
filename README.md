@@ -128,7 +128,34 @@
 ![6.01](http://oozx6yayl.bkt.clouddn.com/6.01WeiBo.gif)
 
 
+
+【表情模型数据结构】：<br>
+![5.31](http://oozx6yayl.bkt.clouddn.com/5.31WeiBo.jpeg)
+
+<br><br>
+2017年06月03日 — 
+
+【状态】：实现发微博页面功能和表情键盘部分 <br>
+【计划】：完善首页图文混排和图片浏览功能 <br>
+【实现步骤】：<br>
+
+1. 使用正则表达式匹配微博数据
+2. 微博正文的表情匹配
+3. 封装 RELabel 来统一展示和管理微博正文的 @用户 、#话题#、网页链接等
+4. 创建 PhotoBrowserViewController ，定制cell来展示图片
+5. 下载大图并绘制进度 progressView
+6. 监听图片点击推出控制器和保存图片等
+7. 自定义 PhonoBrowser 的弹出和消失动画
+
+【当前效果】：<br>
+![6.03](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo.gif)
+
+
 ## 主要页面效果如图
+
+<br><br>
+![home](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_home.png)&emsp;&emsp;![photoBrowser](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_photoBrowser.compose.png)
+
 
 ## 安装和使用
 
