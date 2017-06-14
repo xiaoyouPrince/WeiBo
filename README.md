@@ -154,7 +154,7 @@
 ## 主要页面效果如图
 
 <br><br>
-![home](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_home.png)&emsp;&emsp;![photoBrowser](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_photoBrowser.compose.png)
+![home](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_home.png)&emsp;&emsp;![photoBrowser](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_photoBrowser.png)&emsp;&emsp;![compose](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_compose.png)
 
 
 ## 安装和使用
