@@ -128,10 +128,6 @@
 ![6.01](http://oozx6yayl.bkt.clouddn.com/6.01WeiBo.gif)
 
 
-
-【表情模型数据结构】：<br>
-![5.31](http://oozx6yayl.bkt.clouddn.com/5.31WeiBo.jpeg)
-
 <br><br>
 2017年06月03日 — 
 
@@ -154,7 +150,8 @@
 ## 主要页面效果如图
 
 <br><br>
-![home](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_home.png)&emsp;&emsp;![photoBrowser](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_photoBrowser.png)&emsp;&emsp;![compose](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo_compose.png)
+
+![last](http://oozx6yayl.bkt.clouddn.com/6.14WeiBo_last.png)
 
 
 ## 安装和使用
