@@ -106,7 +106,7 @@
 9. 将使用过的表情插入到最近表情中
 
 
-【当前效果】：<br>
+【表情模型数据结构】：<br>
 ![5.31](http://oozx6yayl.bkt.clouddn.com/5.31WeiBo.jpeg)
 
 <br><br>
@@ -125,7 +125,7 @@
 7. 发送图片微博
 
 【当前效果】：<br>
-![6.01](http://oozx6yayl.bkt.clouddn.com/5.25WeiBo2.gif-)
+![6.01](http://oozx6yayl.bkt.clouddn.com/6.01WeiBo.gif)
 
 
 ## 主要页面效果如图
