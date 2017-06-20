@@ -66,7 +66,7 @@
 9. 布局欢迎界面，并处理欢迎界面的逻辑
 
 【当前效果】：<br>
-![5.23](http://oozx6yayl.bkt.clouddn.com/5.23WeiBo.gif)
+![5.23](Images/5.23WeiBo.gif)
 
 <br><br>
 2017年05月25日 — 
@@ -86,7 +86,7 @@
 9. 添加提示更新微博数目的Label
 
 【当前效果】：<br>
-![5.25](http://oozx6yayl.bkt.clouddn.com/5.25WeiBo2.gif)
+![5.25](Images/5.25WeiBo2.gif)
 
 <br><br>
 2017年05月31日 — 
@@ -107,7 +107,7 @@
 
 
 【表情模型数据结构】：<br>
-![5.31](http://oozx6yayl.bkt.clouddn.com/5.31WeiBo.jpeg)
+![5.31](Images/5.31WeiBo.jpeg)
 
 <br><br>
 2017年06月01日 — 
@@ -125,7 +125,7 @@
 7. 发送图片微博
 
 【当前效果】：<br>
-![6.01](http://oozx6yayl.bkt.clouddn.com/6.01WeiBo.gif)
+![6.01](Images/6.01WeiBo.gif)
 
 
 <br><br>
@@ -144,14 +144,14 @@
 7. 自定义 PhonoBrowser 的弹出和消失动画
 
 【当前效果】：<br>
-![6.03](http://oozx6yayl.bkt.clouddn.com/6.03WeiBo.gif)
+![6.03](Images/6.03WeiBo.gif)
 
 
 ## 主要页面效果如图
 
 <br><br>
 
-![last](http://oozx6yayl.bkt.clouddn.com/6.14WeiBo_last.png)
+![last](Images/6.14WeiBo_last.png)
 
 
 ## 安装和使用
