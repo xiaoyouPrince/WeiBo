@@ -17,7 +17,6 @@ protocol PhotoBrowserViewCellDelegate : NSObjectProtocol {
 
 class PhotoBrowserViewCell: UICollectionViewCell {
     
-    
     var picUrl : URL?
     {
         didSet{
@@ -104,7 +103,6 @@ extension PhotoBrowserViewCell {
 
         // 4.设置imagView的图片
         progressView.isHidden = false
-        
         imageView.sd_setImage(with: getBigURL(picUrl!), placeholderImage: image, options: [], progress: { (current, total, _) in
             self.progressView.progress = CGFloat(current) / CGFloat(total)
         }) { (_, _, _, _) in

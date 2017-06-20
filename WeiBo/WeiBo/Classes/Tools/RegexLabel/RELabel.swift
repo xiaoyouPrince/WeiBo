@@ -191,6 +191,7 @@ extension RELabel {
             }
         }
         
+        
         setNeedsDisplay()
     }
 }

@@ -22,8 +22,7 @@ class PhotoBrowserViewController: UIViewController {
     fileprivate lazy var closeBtn : UIButton = UIButton(bgColor: UIColor.darkGray, fontSize: 14, title: "关 闭")
     fileprivate lazy var saveBtn : UIButton = UIButton(bgColor: UIColor.darkGray, fontSize: 14, title: "保 存")
     
-    
-    
+
     init(indexPath : IndexPath , urls : [URL]){
         
         self.indexPath = indexPath

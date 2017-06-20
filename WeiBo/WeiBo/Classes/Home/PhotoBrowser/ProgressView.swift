@@ -34,7 +34,10 @@ class ProgressView: UIView {
         path.close()
         
         // 设置绘制的颜色
-        UIColor(white: 1.0, alpha: 0.4).setFill()
+//        UIColor(white: 1.0, alpha: 0.4).setFill()
+        UIColor.red.setFill()
+//        let colorValue : Float = 100 / 255
+//        UIColor(colorLiteralRed: colorValue, green: colorValue, blue: colorValue, alpha: 1.0).setFill()
         
         // 开始绘制
         path.fill()

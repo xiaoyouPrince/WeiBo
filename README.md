@@ -46,7 +46,7 @@
 8. 完善titleBtn的点击细节，封装对应转场代码，抽取弹出视图的frame和设置对应titleBtn的选中状态等
 
 【当前效果】：<br>
-![5.19](http://oozx6yayl.bkt.clouddn.com/5.19WeiBo.gif)
+![5.19](Images/5.19WeiBo.gif)
 
 <br><br>
 2017年05月23日 — 
