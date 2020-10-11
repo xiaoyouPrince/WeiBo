@@ -31,7 +31,12 @@ extension MainViewController{
     fileprivate func setupComposeBtn() {
         
         // 设置位置
-        composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.center.y)
+        if UIScreen.main.bounds.height >= 812 {
+            composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.center.y - 34)
+        }else{
+            composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.center.y)
+        }
+        
         
         // 添加到View上
         self.view.addSubview(composeBtn)
@@ -126,7 +131,7 @@ extension MainViewController{
         // 5.包装导航控制器
         let nav = UINavigationController(rootViewController: childVc)
         
-        addChildViewController(nav)
+        addChild(nav)
     }
     
 }

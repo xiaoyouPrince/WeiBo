@@ -88,7 +88,9 @@ extension PhotoBrowserViewCell {
         }
         
         // 2.取出image对象
-        let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
+//        let image = SDWebImageManager.shared.imageCache.diskCache(forKey: picURL.absoluteString)
+        let imageCache: SDImageCache = SDWebImageManager.shared.imageCache as! SDImageCache
+        let image = imageCache.imageFromCache(forKey: picURL.absoluteString)
         
         // 3.计算imageView的frame
         let width = UIScreen.main.bounds.width

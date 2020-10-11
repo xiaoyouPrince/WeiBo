@@ -27,7 +27,7 @@ extension UITextView {
             
             Dlog("\(String(describing: dict))" + "-----" + "(\(range.location),\(range.length))")
             
-            if  let attachment = dict["NSAttachment"] as? EmotionAttchment {
+            if  let attachment = dict[NSAttributedString.Key(rawValue: "NSAttachment")] as? EmotionAttchment {
                 attrStr.replaceCharacters(in: range, with: attachment.chs!)
             }
             

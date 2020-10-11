@@ -153,7 +153,7 @@ extension ComposeViewController{
     fileprivate func addNotifications(){
         
         // 1.监听键盘弹出和收回
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidChangeFrame(noti:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidChangeFrame(noti:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         // 2.添加和删除图片
         NotificationCenter.default.addObserver(self, selector: #selector(picPickerAddPhoto), name:picPickerAddPhotoNote, object: nil)
@@ -170,9 +170,9 @@ extension ComposeViewController{
     /// - Parameter noti: 通知
     @objc fileprivate func keyboardDidChangeFrame(noti : Notification){
         
-        let duration = noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let duration = noti.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         
-        let endFrame = (noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let endFrame = (noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         toolBarBottomCons.constant = kScreenH - endFrame.origin.y
         UIView.animate(withDuration: duration) { 
@@ -229,7 +229,7 @@ extension ComposeViewController : UIImagePickerControllerDelegate , UINavigation
         Dlog(info)
         
         // 得到原图
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as! UIImage
         
         // 传给picPickerView做数据源
         images.append(image)

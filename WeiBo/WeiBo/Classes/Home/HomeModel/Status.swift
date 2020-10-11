@@ -10,12 +10,19 @@ import UIKit
 
 class Status: NSObject {
     
+    @objc
     var created_at : String?                /// 微博创建时间
+    @objc
     var text : String?                      /// 微博正文
+    @objc
     var source : String?                    /// 微博来源
+    @objc
     var mid : Int = 0                       /// 微博ID
+    @objc
     var user : User?                        /// 用户类型
+    @objc
     var pic_urls : [[String : String]]?     /// 微博配图
+    @objc
     var retweeted_status : Status?           /// 转发微博
     
     

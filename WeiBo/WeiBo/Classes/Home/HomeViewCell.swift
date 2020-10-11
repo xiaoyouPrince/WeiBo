@@ -202,7 +202,10 @@ extension HomeViewCell{
             // 3.1取出缓存图片，根据该图片的Size进行返回
             let imageurl = self.statusVM?.picURLs.first?.absoluteString
             
-            if let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: imageurl)
+            let imageCache: SDImageCache = SDWebImageManager.shared.imageCache as! SDImageCache
+            let image = imageCache.imageFromCache(forKey: imageurl)
+            
+            if let image = image
              {
                 // 3.2 设置单张配图的layout.itemSize
                 layout.itemSize = CGSize(width: ((image.size.width) * 2) > 150 ? 150 : ((image.size.width) * 2 ), height: (image.size.height) * 2 > 100 ? 100 : (image.size.height) * 2)

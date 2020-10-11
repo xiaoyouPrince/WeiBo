@@ -110,7 +110,7 @@ class RELabel: UILabel {
             let selectedColor = isSelected ? UIColor(white: 0.7, alpha: 0.2) : UIColor.clear
             
             // 2.1.设置颜色
-            textStorage.addAttribute(NSBackgroundColorAttributeName, value: selectedColor, range: selectedRange!)
+            textStorage.addAttribute(NSAttributedString.Key.backgroundColor, value: selectedColor, range: selectedRange!)
             
             // 2.2.绘制背景
             layoutManager.drawBackground(forGlyphRange: selectedRange!, at: CGPoint(x: 0, y: 0))
@@ -161,7 +161,7 @@ extension RELabel {
         // 2.设置换行模型
         let attrStringM = addLineBreak(attrString!)
         
-        attrStringM.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: attrStringM.length))
+        attrStringM.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attrStringM.length))
         
         // 3.设置textStorage的内容
         textStorage.setAttributedString(attrStringM)
@@ -170,7 +170,7 @@ extension RELabel {
         if let linkRanges = getLinkRanges() {
             self.linkRanges = linkRanges
             for range in linkRanges {
-                textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
+                textStorage.addAttribute(NSAttributedString.Key.foregroundColor, value: matchTextColor, range: range)
             }
         }
         
@@ -178,7 +178,7 @@ extension RELabel {
         if let userRanges = getRanges("@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*") {
             self.userRanges = userRanges
             for range in userRanges {
-                textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
+                textStorage.addAttribute(NSAttributedString.Key.foregroundColor, value: matchTextColor, range: range)
             }
         }
         
@@ -187,7 +187,7 @@ extension RELabel {
         if let topicRanges = getRanges("#.*?#") {
             self.topicRanges = topicRanges
             for range in topicRanges {
-                textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
+                textStorage.addAttribute(NSAttributedString.Key.foregroundColor, value: matchTextColor, range: range)
             }
         }
         
@@ -336,14 +336,14 @@ extension RELabel {
         
         var range = NSRange(location: 0, length: 0)
         var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
-        var paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle
+        var paragraphStyle = attributes[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle
         
         if paragraphStyle != nil {
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
         } else {
             paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
-            attributes[NSParagraphStyleAttributeName] = paragraphStyle
+            attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             
             attrStringM.setAttributes(attributes, range: range)
         }

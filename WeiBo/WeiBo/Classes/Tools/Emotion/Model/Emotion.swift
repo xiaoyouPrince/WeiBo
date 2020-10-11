@@ -11,6 +11,7 @@ import UIKit
 class Emotion: NSObject {
     
     // MARK: - 属性
+    @objc
     var code : String? /// emoji 对应的code
     {
         didSet{
@@ -31,6 +32,7 @@ class Emotion: NSObject {
             emojiCode = String(c)
         }
     }
+    @objc
     var png : String?  /// 普通表情对应的png
     {
         didSet{
@@ -42,12 +44,17 @@ class Emotion: NSObject {
             pngPath = Bundle.main.bundlePath + "/Emoticons.bundle/" + png
         }
     }
+    @objc
     var chs : String?  /// 普通表情对应的文字
     
     // MARK: - 数据处理
+    @objc
     var pngPath : String?   ///表情图片的路径
+    @objc
     var emojiCode : String?     ///code处理成 emojiCode码
+    @objc
     var isRemove : Bool = false     ///记录是否是删除表情
+    @objc
     var isEmpty : Bool = false     ///记录是否是空表情
     
     init(dict : [String : Any]){

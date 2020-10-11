@@ -22,7 +22,8 @@ class HomeViewController: BaseViewController {
         tipLabel.backgroundColor = UIColor.orange
         tipLabel.textColor = UIColor.white
         tipLabel.textAlignment = NSTextAlignment.center
-        tipLabel.frame = CGRect(x: 10, y: 10, width: kScreenW - 20, height: 34)
+//        tipLabel.frame = CGRect(x: 10, y: 10, width: kScreenW - 20, height: 34)
+        tipLabel.frame = CGRect(x: kScreenW/2, y: 44, width: 0, height: 34)
         tipLabel.layer.cornerRadius = 5
         tipLabel.clipsToBounds = true
         tipLabel.isHidden = true
@@ -161,7 +162,7 @@ extension HomeViewController{
             label.textColor = UIColor.gray
             label.textAlignment = NSTextAlignment.center
             label.font = UIFont.boldSystemFont(ofSize: 13)
-            self.tableView.mj_footer.addSubview(label)
+            self.tableView.mj_footer?.addSubview(label)
 
             // 请求数据
             self.loadData(false)
@@ -169,7 +170,7 @@ extension HomeViewController{
         
         
         // 3.每次进来直接进行下拉刷新操作
-        self.tableView.mj_header.beginRefreshing()
+        self.tableView.mj_header?.beginRefreshing()
         
     }
     
@@ -195,8 +196,8 @@ extension HomeViewController{
             guard let statusArray = result else{
                 
                 // 这块说明没有值，请求超限
-                self.tableView.mj_footer.endRefreshing()
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 
                 SVProgressHUD.showError(withStatus: "请求超限制次数")
                 
@@ -241,7 +242,7 @@ extension HomeViewController{
             for url in viewModel.picURLs {
                 
                 group.enter()
-                SDWebImageManager.shared().loadImage(with: url, options: [], progress: nil, completed: { (_, _, _, _, _, _) in
+                SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil, completed: { (_, _, _, _, _, _) in
 
                     Dlog("图片下载完")
                     group.leave()
@@ -252,9 +253,6 @@ extension HomeViewController{
         group.notify(queue: DispatchQueue.main) {
             
             self.tableView.reloadData()
-            
-            self.tableView.mj_header.endRefreshing()
-            self.tableView.mj_footer.endRefreshing()
             
             Dlog("刷新数据")
             
@@ -276,23 +274,27 @@ extension HomeViewController{
         }
         
         self.tipLabel.isHidden = false
-        let bgview = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 44))
-        bgview.backgroundColor = UIColor.white
-        navigationController?.navigationBar.insertSubview(bgview, at: 0)
         navigationController?.navigationBar.insertSubview(self.tipLabel, at: 0)
         
-        UIView.animate(withDuration: 1.5, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             
             // 慢慢展示
-            self.tipLabel.transform = CGAffineTransform(translationX: 0, y: 44)
+            self.tipLabel.frame = CGRect(x: 10, y: 44, width: kScreenW - 20, height: 34)
             
         }, completion: { (_) in
             
             // 慢慢消失
-            UIView.animate(withDuration: 1.5, delay: 1.0, options: [], animations: {
-                self.tipLabel.transform = CGAffineTransform.identity
+            UIView.animate(withDuration: 0.2, delay: 1.0, options: [], animations: {
+
+                self.tipLabel.frame = CGRect(x: kScreenW/2, y: 44, width: 0, height: 34)
+                
+                
+                
             }, completion: { (_) in
                 self.tipLabel.isHidden = true
+                
+                self.tableView.mj_header?.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
             })
         })
 

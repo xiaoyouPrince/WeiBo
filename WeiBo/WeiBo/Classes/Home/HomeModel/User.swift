@@ -13,10 +13,15 @@ class User: NSObject {
     
     
     // MARK: - 基本属性
+    @objc
     var profile_image_url : String?   // 用户头像
+    @objc
     var screen_name : String?         // 用户昵称
+    @objc
     var mbrank : Int = 0              // 会员等级0-6 共7级
+    @objc
     var verified : Bool = false
+    @objc
     var verified_type : Int = -1      // 是否认证和认证类型
     
     

@@ -32,7 +32,7 @@ class FindEmotion: NSObject {
         }
         
         // 3.开始匹配
-        let results = regex.matches(in: statusText, options: [], range: NSRange(location: 0, length: statusText.characters.count))
+        let results = regex.matches(in: statusText, options: [], range: NSRange(location: 0, length: statusText.count))
 
         // 4.获取结果
         let attrMStr = NSMutableAttributedString(string: statusText)

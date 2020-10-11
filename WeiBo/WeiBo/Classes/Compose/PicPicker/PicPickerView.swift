@@ -51,7 +51,7 @@ extension PicPickerView{
         layout.minimumLineSpacing = margin
         layout.minimumInteritemSpacing = margin
         
-        self.contentInset = UIEdgeInsetsMake(margin, margin, 0, margin)
+        self.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: 0, right: margin)
     }
     
 }

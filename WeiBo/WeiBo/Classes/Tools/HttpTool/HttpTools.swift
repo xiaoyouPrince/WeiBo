@@ -26,9 +26,9 @@ class HttpTools: NSObject {
         let accessToken = UserAccountViewModel.shareInstance.account?.access_token
         let params = ["access_token" : accessToken , "status" : statusText]
 
-        manager.post(urlStr, parameters: params, constructingBodyWith: { (formData) in
+        manager.post(urlStr, parameters: params, headers: nil, constructingBodyWith: { (formData) in
             
-            let imageData = UIImageJPEGRepresentation(image, 0.5)
+            let imageData = image.jpegData(compressionQuality: 0.5)
             formData.appendPart(withFileData: imageData!, name: "pic", fileName: "123.png", mimeType: "image/png")
             
         }, progress: nil, success: { (_, _) in

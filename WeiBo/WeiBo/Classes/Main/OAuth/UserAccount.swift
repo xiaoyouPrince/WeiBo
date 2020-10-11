@@ -11,9 +11,11 @@ import UIKit
 class UserAccount: NSObject , NSCoding{
     
     /// 用户授权的唯一票据
+    @objc
     var access_token : String?
     
     ///access_token的生命周期，单位是秒数
+    @objc
     var expires_in : TimeInterval = 0.0{
         didSet{
             
@@ -22,19 +24,25 @@ class UserAccount: NSObject , NSCoding{
     }
     
     ///授权用户的UID
+    @objc
     var uid : String?
     
     /// 过期日期
+    @objc
     var expires_date : Date?
     
     /// 用户昵称
+    @objc
     var screen_name : String?
     
     /// 用户头像
+    @objc
     var avatar_large : String?
     
     
-    
+    /// 用户头像
+    @objc
+    var remind_in : String?
     
     
     override init() {

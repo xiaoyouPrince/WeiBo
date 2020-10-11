@@ -67,9 +67,11 @@ extension PicCollectionView : AnimatorPresentedDelegate {
     func endRect(indexPath: IndexPath) -> CGRect {
         // 1.获取该位置的image对象
         let picURL = picUrls[indexPath.item]
-        let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: picURL.absoluteString)
+//        let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: picURL.absoluteString)
         
-        
+        let imageCache: SDImageCache = SDWebImageManager.shared.imageCache as! SDImageCache
+        let image = imageCache.imageFromCache(forKey: picURL.absoluteString)
+                
         // 2.计算结束后的frame
         let w = UIScreen.main.bounds.width
         let h = w / (image?.size.width)! * (image?.size.height)!
@@ -89,7 +91,9 @@ extension PicCollectionView : AnimatorPresentedDelegate {
         
         // 2.获取该位置的image对象
         let picURL = picUrls[indexPath.item]
-        let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
+//        let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
+        let imageCache: SDImageCache = SDWebImageManager.shared.imageCache as! SDImageCache
+        let image = imageCache.imageFromCache(forKey: picURL.absoluteString)
         
         // 3.设置imageView的属性
         imageView.image = image
